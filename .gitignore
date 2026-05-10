@@ -1,0 +1,6 @@
+__pycache__/
+*.pyc
+.DS_Store
+tla2tools.jar
+EHV.out
+EHV.trace

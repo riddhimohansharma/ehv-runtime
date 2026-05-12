@@ -1,5 +1,6 @@
 import time
 import json
+import hashlib
 from threading import Lock
 
 class PolicyStore:
@@ -68,7 +69,6 @@ class PolicyStore:
     def get_hash(self):
         """Pillar 2: Policy Hash for Epoch Attestation"""
         state_str = json.dumps(self.get_all(), sort_keys=True)
-        import hashlib
         return hashlib.sha256(state_str.encode()).hexdigest()
 
 # Singleton for the runtime's primary node

@@ -1,0 +1,22 @@
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "ehv-runtime"
+version = "0.2.0"
+authors = [
+  { name="Riddhi Mohan Sharma", email="riddhimohan@ieee.org" },
+]
+description = "A provably deterministic governance-aware JIT compiler architecture for agentic systems."
+readme = "README.md"
+requires-python = ">=3.10"
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent",
+    "Topic :: Scientific/Engineering :: Artificial Intelligence",
+]
+
+# No external dependencies - entirely Python standard library
+dependencies = []

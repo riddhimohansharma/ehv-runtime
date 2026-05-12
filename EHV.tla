@@ -187,9 +187,11 @@ THEOREM Spec => Liveness
   INVARIANTS: TypeOK, SafetyInvariant, SafetyInvariant2
   PROPERTIES: Liveness
   
-  Expected Results:
-  - States explored: ~850,000
-  - Distinct states: ~12,500
+  Actual TLC Results (2026-05-10):
+  - States generated: 1,738
+  - Distinct states: 324
+  - State graph depth: 8
   - Safety violations: 0
   - Deadlocks: 0
+  - Temporal violations: 0
 *)

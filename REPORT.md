@@ -18,15 +18,16 @@ This report documents the empirical verification of **Sub-millisecond Formal Det
 
 **Conclusion**: The safety invariant was enforced within microseconds of the CRDT update. Non-compliant actions were computationally unreachable.
 
-## 📊 Experiment 2: Performance (SMFD Proof)
+## 📊 Experiment 2: Enforcement Pattern Overhead
 **Test**: 10,000 iterations of an agentic action under governance.
+Note: These results measure Python function-call overhead of the enforcement decorator pattern, not production TEE latency. Results vary ±30% across runs.
 
 | Metric | Result |
 |:---|:---|
-| Mean GL | **0.001429 ms** |
-| Median GL | 0.001416 ms |
-| P99 GL | 0.001667 ms |
-| Min GL | 0.001291 ms |
+| Mean Overhead | **~0.0010 ms** |
+| Median Overhead | ~0.0009 ms |
+| P99 Overhead | ~0.0013 ms |
+| Min Overhead | ~0.0008 ms |
 
 **Threshold**: < 1.000000 ms
 **Status**: **PASSED**

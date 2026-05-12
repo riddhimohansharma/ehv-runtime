@@ -1,4 +1,4 @@
-# EHV-Runtime: Ethical Hyper-Velocity Governance
+# EHV-Runtime: Ethical Hyper-Velocity Governance (Proof of Concept)
 
 [![arXiv](https://img.shields.io/badge/arXiv-2605.xxxxx-B31B1B.svg)](https://arxiv.org/abs/2605.xxxxx)
 [![Stability: Alpha](https://img.shields.io/badge/stability-alpha-orange.svg)](#)
@@ -11,7 +11,7 @@
 
 Modern AI governance suffers from **Governance Latency (GL)**—the 14-30 day gap between a policy decision (e.g., FDA dosage update) and its enforcement in production. For autonomous agents moving at machine speed, this gap is catastrophic.
 
-**EHV-Runtime** is the first implementation of **Sub-millisecond Formal Determinism (SMFD)**. It moves the Policy Enforcement Point (PEP) from a manual gate to a hardware-rooted system invariant.
+**EHV-Runtime** is a proof-of-concept demonstrating the **EHV enforcement pattern**: decorator-based policy enforcement with CRDT-inspired policy synchronization. It validates the control flow of the Governance-Aware JIT architecture described in the paper. See [LIMITATIONS.md](LIMITATIONS.md) for explicit scoping of what is and isn't implemented.
 
 ### The Performance Proof
 | Metric | Benchmark | EHV-Runtime Result |
@@ -54,10 +54,12 @@ python examples/latency_bench.py
 
 ## 📂 Repository Roadmap
 
-- [x] **Core Engine**: JIT Hook + CRDT Store implementation.
-- [x] **Formal Verification**: TLA+ specification verified with TLC (0 violations).
+- [x] **Enforcement Pattern**: Decorator-based PEP + LWW Policy Store.
+- [x] **Formal Verification**: TLA+ specification verified with TLC (0 violations, 324 states).
+- [ ] **Multi-Node CRDT**: Distributed policy sync with partition testing.
 - [ ] **Hardware Root**: Integration with Intel TDX / AMD SEV-SNP.
 - [ ] **ASEL**: Action Schema Extraction Layer for natural language parsing.
+- [ ] **LLM Integration**: PEP wrapping a real inference pipeline.
 - [ ] **FAITH Integration**: Federated AI Identity + Trust Architecture.
 
 ---

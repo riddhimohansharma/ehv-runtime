@@ -46,5 +46,9 @@ def run_simulation():
         print(f"REJECTED: {e}")
         print("Proof: Non-compliant actions are computationally unreachable.")
 
+    print("\n--- GBOM (Governance Bill of Materials) ---")
+    from ehv.compiler.gbom import global_gbom_log
+    print(global_gbom_log.to_json())
+
 if __name__ == "__main__":
     run_simulation()

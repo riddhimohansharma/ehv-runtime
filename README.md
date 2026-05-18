@@ -12,9 +12,8 @@ Healthcare Informatics | Columbia University EPM
 
 ## 📄 Paper
 
-"Governing the Physician Twin: Ethical Hyper-Velocity (EHV) 
-as a Provably Deterministic Governance Architecture for 
-Agentic Identity in Health Digital Twins"
+"Ethical Hyper-Velocity (EHV): A Provably Deterministic 
+Governance-Aware JIT Compiler Architecture for Agentic Systems"
 
 - arXiv: *[under review — link to be added May 18, 2026]*
 - Blog: [riddhimohan.com/blog/ethical-hyper-velocity-ehv-governance-framework](https://www.riddhimohan.com/blog/ethical-hyper-velocity-ehv-governance-framework)
@@ -117,10 +116,8 @@ python examples/latency_bench.py
 
 ```bibtex
 @misc{sharma2026ehv,
-  title={Governing the Physician Twin: Ethical Hyper-Velocity 
-         (EHV) as a Provably Deterministic Governance 
-         Architecture for Agentic Identity in Health Digital 
-         Twins},
+  title={Ethical Hyper-Velocity (EHV): A Provably Deterministic 
+         Governance-Aware JIT Compiler Architecture for Agentic Systems},
   author={Sharma, Riddhi Mohan},
   year={2026},
   note={arXiv preprint [link to be added]},

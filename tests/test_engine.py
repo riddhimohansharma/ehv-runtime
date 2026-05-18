@@ -97,7 +97,7 @@ class TestFailSafe:
             engine.invalidate_epoch()
 
             # Now ALL actions must be DENIED regardless of constraint
-            with pytest.raises(GovernanceError, match="fail-safe"):
+            with pytest.raises(GovernanceError, match="fail-closed partition"):
                 prescribe(1.0)
             assert gbom.entries[-1].enforcement_result == "DENY"
             assert gbom.entries[-1].attestation_valid is False

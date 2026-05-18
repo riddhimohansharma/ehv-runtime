@@ -7,6 +7,11 @@ class PolicyStore:
     """
     Pillar 1: CRDT-Based Policy Store (LWW-Element-Set)
     Simulates monotonic policy convergence across nodes.
+
+    WARNING (Threat T7): The current LWW CRDT relies on physical timestamps 
+    (time.time()). In untrusted edge deployments, this is vulnerable to clock 
+    skew and NTP poisoning. Phase 2 hardening will replace this with a directed 
+    acyclic graph (DAG) of policy mutations using vector clocks or Lamport timestamps.
     """
     def __init__(self, node_id="default"):
         self.node_id = node_id

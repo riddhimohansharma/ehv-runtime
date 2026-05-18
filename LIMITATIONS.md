@@ -15,6 +15,13 @@ EHV-Runtime is a **proof-of-concept** demonstrating the EHV enforcement pattern:
 | **Pillar 3: PEP in JIT** | Token-generation layer enforcement inside TEE | ⚠️ **Pattern Only** | Python decorator wrapping function calls. No JIT compilation, no token-level interception. |
 | **ASEL** | Structured action extraction from LLM output | ❌ **Not Implemented** | Examples use pre-structured function arguments. |
 | **GBOM** | Cryptographic audit receipt per decision | ❌ **Not Implemented** | Future work. |
+| **Formal Verification** | Prove non-compliance is unreachable | ⚠️ **Bounded Only** | Verified via TLA+ to depth 8 (324 distinct states) under a bounded, small-scope configuration. Unbounded verification via inductive invariants (TLAPS) is a Phase 2 target. |
+
+## Threat Model & Vulnerabilities
+
+| Threat ID | Description | Phase 2 Mitigation |
+|:---|:---|:---|
+| **T7 - Clock-Skew / NTP Poisoning** | An attacker with root access on an edge node can forge future timestamps to poison the global policy state in the LWW CRDT. | Migration from physical timestamps to a cryptographically signed causal DAG (vector clocks). |
 
 ## Benchmark Interpretation
 

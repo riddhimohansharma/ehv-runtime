@@ -1,0 +1,21 @@
+cff-version: 1.2.0
+title: "Ethical Hyper-Velocity (EHV): A Provably Deterministic Governance-Aware JIT Compiler Architecture for Agentic Systems"
+message: "If you use this work, please cite it as below."
+authors:
+  - family-names: Sharma
+    given-names: Riddhi Mohan
+    affiliation: "Independent Researcher, AI Governance & Healthcare Informatics | Columbia University EPM"
+    website: "https://www.riddhimohan.com"
+version: "4.1"
+date-released: 2026-05-18
+url: "https://www.riddhimohan.com/blog/ethical-hyper-velocity-ehv-governance-framework"
+license: CC-BY-4.0
+keywords:
+  - AI governance
+  - health digital twin
+  - agentic AI
+  - formal verification
+  - TLA+
+  - Zero Trust Architecture
+  - healthcare AI
+  - governance latency

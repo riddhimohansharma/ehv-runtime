@@ -33,7 +33,7 @@ Note: These results measure Python function-call overhead of the enforcement dec
 **Status**: **PASSED**
 
 ## 🧠 Formal Methods Alignment
-The execution path observed in these experiments aligns 100% with the **TLA+ model checking results** (1,738 states, 0 violations). The `EHV.tla` specification correctly predicted the "Deny-on-Update" behavior observed in the Clinical Safety experiment.
+The execution path observed in these experiments aligns 100% with the **TLA+ model checking results** (1,738 states generated, 324 distinct states found, 0 violations at depth 8). The `EHV.tla` specification correctly predicted the "Deny-on-Update" behavior observed in the Clinical Safety experiment.
 
 ---
 *Verified by EHV Governance Engine | Riddhi Mohan Sharma*

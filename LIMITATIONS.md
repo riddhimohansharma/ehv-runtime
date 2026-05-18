@@ -1,6 +1,6 @@
 # EHV-Runtime: Scope & Limitations
 
-> This document explicitly scopes what the EHV-Runtime **does** and **does not** implement relative to the full EHV architecture described in the [paper](https://arxiv.org/abs/2605.xxxxx).
+> This document explicitly scopes what the EHV-Runtime **does** and **does not** implement relative to the full EHV architecture described in the paper (arXiv preprint, under review).
 
 ## What This Repository Is
 
@@ -11,9 +11,9 @@ EHV-Runtime is a **proof-of-concept** demonstrating the EHV enforcement pattern:
 | Paper Pillar | Claim | Runtime Status | Notes |
 |:---|:---|:---|:---|
 | **Pillar 1: CRDT Policy Sync** | LWW-Element-Set with distributed multi-node convergence | ⚠️ **Partial** | Single-node `PolicyStore` with LWW timestamps. No multi-node distribution or network partition testing. |
-| **Pillar 2: TEE Attestation Caching** | Hardware-rooted TEE with epoch-based attestation | ⚠️ **Simulated** | Epoch check via `time.time()` comparison. No real TEE (Intel SGX/TDX, AMD SEV-SNP) integration. |
+| **Pillar 2: TEE Attestation Caching** | Hardware-rooted TEE with epoch-based attestation | ⚠️ **Simulated** | Epoch check via `time.time()` comparison. No real TEE integration. Successfully enforces strict fail-closed partition semantics: when a partition outlasts the epoch duration $|E_k|$, the PEP transitions to a `Safe Halt State` denying all actions (simulated via `invalidate_epoch()`). |
 | **Pillar 3: PEP in JIT** | Token-generation layer enforcement inside TEE | ⚠️ **Pattern Only** | Python decorator wrapping function calls. No JIT compilation, no token-level interception. |
-| **ASEL** | Structured action extraction from LLM output | ❌ **Not Implemented** | Examples use pre-structured function arguments. |
+| **ASEL** | Structured action extraction from LLM output | ❌ **Not Implemented** | Scoped out of formal verification; safety invariant $I_g$ holds conditional on correct extraction. Phase 2 roadmap will close this semantic gap via Grammar-Constrained Decoding (GCD) logits masking using a compiled DFA. |
 | **GBOM** | Cryptographic audit receipt per decision | ❌ **Not Implemented** | Future work. |
 | **Formal Verification** | Prove non-compliance is unreachable | ⚠️ **Bounded Only** | Verified via TLA+ to depth 8 (324 distinct states) under a bounded, small-scope configuration. Unbounded verification via inductive invariants (TLAPS) is a Phase 2 target. |
 

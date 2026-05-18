@@ -1,6 +1,6 @@
 # EHV-Runtime: Ethical Hyper-Velocity Governance (Proof of Concept)
 
-[![arXiv](https://img.shields.io/badge/arXiv-2605.xxxxx-B31B1B.svg)](https://arxiv.org/abs/2605.xxxxx)
+[![arXiv](https://img.shields.io/badge/arXiv-under_review-B31B1B.svg)](#)
 [![Stability: Alpha](https://img.shields.io/badge/stability-alpha-orange.svg)](#)
 
 > **"Architecture is Policy."** Stop auditing after the fact. Compile your governance invariants into the inference stack and make non-compliant AI actions computationally unreachable.
@@ -66,7 +66,7 @@ python examples/latency_bench.py
 
 ## 📚 Research & Artifacts
 
-- **[arXiv Pre-print](https://arxiv.org/abs/2605.xxxxx)**: Read the full theoretical foundation.
+- **arXiv Preprint**: *[Under Review — Submitted May 18, 2026]*
 - **[Verification Report](REPORT.md)**: View the latest empirical benchmarks.
 - **[TLA+ Specification](EHV.tla)**: Inspect the formal safety proofs.
 

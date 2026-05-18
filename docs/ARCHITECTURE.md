@@ -21,7 +21,7 @@ To avoid the overhead of a remote attestation check (which can exceed 200ms), EH
 - **Hot-Path Verification**: For every inference call within the epoch, the system performs a local O(1) hash comparison.
 
 ## 4. Formal Verification (TLA+)
-The architecture is verified using the **TLA+** specification language. The model checker (TLC) was used to explore 1,738 reachable states across network partitions and concurrent updates, verifying that the safety invariant $I_g$ holds in all cases.
+The architecture is verified using the **TLA+** specification language. The model checker (TLC) was used to verify a bounded configuration (generating 1,738 states and finding 324 distinct states at a state graph depth of 8) across network partitions and concurrent updates, verifying that the safety invariant $I_g$ holds in all cases.
 
 ---
 *Back to [README.md](../README.md)*

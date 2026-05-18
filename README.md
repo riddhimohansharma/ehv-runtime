@@ -1,18 +1,18 @@
 # Ethical Hyper-Velocity (EHV) Governance Framework
 
-> A provably deterministic governance architecture for 
+> A provably deterministic governance architecture for
 > agentic identity in health digital twins.
 
-**Author:** Riddhi Mohan Sharma  
-**Affiliation:** Independent Researcher, AI Governance & 
-Healthcare Informatics | Columbia University EPM  
+**Author:** Riddhi Mohan Sharma
+**Affiliation:** Independent Researcher, AI Governance &
+Healthcare Informatics | Columbia University EPM
 **Website:** [riddhimohan.com](https://www.riddhimohan.com)
 
 ---
 
 ## 📄 Paper
 
-"Ethical Hyper-Velocity (EHV): A Provably Deterministic 
+"Ethical Hyper-Velocity (EHV): A Provably Deterministic
 Governance-Aware JIT Compiler Architecture for Agentic Systems"
 
 - arXiv: *[under review — link to be added May 18, 2026]*
@@ -22,15 +22,15 @@ Governance-Aware JIT Compiler Architecture for Agentic Systems"
 
 ## 🔑 Key Contributions
 
-- **SMFD** — Sub-millisecond Formal Determinism: GL → 0 
+- **SMFD** — Sub-millisecond Formal Determinism: GL → 0
   asymptotically, bounded by O(1) TEE attestation overhead
-- **Policy Enforcement Invariant** — G(a,C) ∈ {PERMIT, DENY, 
+- **Policy Enforcement Invariant** — G(a,C) ∈ {PERMIT, DENY,
   ESCALATE} via hardware-rooted cryptographic attestation
-- **CRDT Join-Semilattice** — Monotonic Byzantine Fault 
+- **CRDT Join-Semilattice** — Monotonic Byzantine Fault
   Tolerant policy sync via K-of-N threshold signatures
-- **Tiered FSDM** — Fail-Safe Degraded Mode across 3 
+- **Tiered FSDM** — Fail-Safe Degraded Mode across 3
   clinical severity tiers (NIST SP 800-53 SI-17 aligned)
-- **Velocity-Ethics Co-Production** — ∂V/∂I ≥ 0, a sign 
+- **Velocity-Ethics Co-Production** — ∂V/∂I ≥ 0, a sign
   reversal from all existing framework assumptions
 
 ---
@@ -88,7 +88,6 @@ python examples/latency_bench.py
 - [ ] **Hardware Root**: Integration with Intel TDX / AMD SEV-SNP.
 - [ ] **ASEL**: Action Schema Extraction Layer for natural language parsing.
 - [ ] **LLM Integration**: PEP wrapping a real inference pipeline.
-- [ ] **FAITH Integration**: Federated AI Identity + Trust Architecture.
 
 ---
 
@@ -116,7 +115,7 @@ python examples/latency_bench.py
 
 ```bibtex
 @misc{sharma2026ehv,
-  title={Ethical Hyper-Velocity (EHV): A Provably Deterministic 
+  title={Ethical Hyper-Velocity (EHV): A Provably Deterministic
          Governance-Aware JIT Compiler Architecture for Agentic Systems},
   author={Sharma, Riddhi Mohan},
   year={2026},

@@ -56,7 +56,14 @@ class EHVEngine:
         # Case 1: Epoch expired or first run → must re-attest
         if (now - self._last_attestation > self.epoch_duration
                 or self._epoch_hash is None):
-            return self._do_attestation(local_hash, now)
+            # Attempt re-attestation
+            success, valid = self._do_attestation(local_hash, now)
+            if not success:
+                # Network partition / cannot reach attestation broker.
+                # Must explicitly fail-closed.
+                self._epoch_valid = False
+                return False, False
+            return success, valid
 
         # Case 2: Epoch still valid → O(1) hot-path comparison
         if not self._epoch_valid:
@@ -73,12 +80,16 @@ class EHVEngine:
 
     def _do_attestation(self, policy_hash, now):
         """Performs remote attestation and updates epoch state."""
-        report = self.enclave.attest(policy_hash)
-        self._epoch_hash = report["policy_hash"]
-        self._epoch_id = report["epoch_id"]
-        self._last_attestation = now
-        self._epoch_valid = report["attestation_status"] == "VALID"
-        return True, self._epoch_valid
+        try:
+            report = self.enclave.attest(policy_hash)
+            self._epoch_hash = report["policy_hash"]
+            self._epoch_id = report["epoch_id"]
+            self._last_attestation = now
+            self._epoch_valid = report["attestation_status"] == "VALID"
+            return True, self._epoch_valid
+        except Exception:
+            # Simulate failure to reach KBS (Key Broker Service)
+            return False, False
 
     def emergency_epoch_reset(self):
         """
@@ -119,8 +130,9 @@ class EHVEngine:
                     self.gbom_log.append(
                         action_name, action_args, policy_hash,
                         self._epoch_id, "DENY", False)
+                    # Task 1: Strict Fail-Closed Partition Semantics
                     raise GovernanceError(
-                        "DENIED: Epoch attestation invalid (fail-safe)")
+                        "DENIED: Epoch attestation invalid (fail-closed partition)")
 
                 current_policies = self.policy_store.get_all()
 

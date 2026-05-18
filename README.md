@@ -55,7 +55,7 @@ python examples/latency_bench.py
 ## 📂 Repository Roadmap
 
 - [x] **Enforcement Pattern**: Decorator-based PEP + LWW Policy Store.
-- [x] **Formal Verification**: TLA+ specification verified with TLC (0 violations, 324 states).
+- [x] **Formal Verification**: TLA+ specification verified with TLC to depth 8 (0 violations, 324 distinct states) under a bounded configuration.
 - [ ] **Multi-Node CRDT**: Distributed policy sync with partition testing.
 - [ ] **Hardware Root**: Integration with Intel TDX / AMD SEV-SNP.
 - [ ] **ASEL**: Action Schema Extraction Layer for natural language parsing.

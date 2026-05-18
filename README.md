@@ -1,32 +1,61 @@
-# EHV-Runtime: Ethical Hyper-Velocity Governance (Proof of Concept)
+# Ethical Hyper-Velocity (EHV) Governance Framework
 
-[![arXiv](https://img.shields.io/badge/arXiv-under_review-B31B1B.svg)](#)
-[![Stability: Alpha](https://img.shields.io/badge/stability-alpha-orange.svg)](#)
+> A provably deterministic governance architecture for 
+> agentic identity in health digital twins.
 
-> **"Architecture is Policy."** Stop auditing after the fact. Compile your governance invariants into the inference stack and make non-compliant AI actions computationally unreachable.
-
----
-
-## ⚡ Why EHV-Runtime?
-
-Modern AI governance suffers from **Governance Latency (GL)**—the 14-30 day gap between a policy decision (e.g., FDA dosage update) and its enforcement in production. For autonomous agents moving at machine speed, this gap is catastrophic.
-
-**EHV-Runtime** is a proof-of-concept demonstrating the **EHV enforcement pattern**: decorator-based policy enforcement with CRDT-inspired policy synchronization. It validates the control flow of the Governance-Aware JIT architecture described in the paper. See [LIMITATIONS.md](LIMITATIONS.md) for explicit scoping of what is and isn't implemented.
-
-### The Performance Proof
-| Metric | Benchmark | EHV-Runtime Result |
-|:---|:---|:---|
-| **Latency (GL)** | < 1,000.00 $\mu$s | **1.42 $\mu$s** (Mean) |
-| **Safety Invariant** | 100% Rejection | **Verified** (TLA+ Invariant $I_g$) |
-| **Consistency** | Eventual | **Guaranteed** (CRDT) |
+**Author:** Riddhi Mohan Sharma  
+**Affiliation:** Independent Researcher, AI Governance & 
+Healthcare Informatics | Columbia University EPM  
+**Website:** [riddhimohan.com](https://www.riddhimohan.com)
 
 ---
 
-## 🏗️ 3-Pillar Architecture
+## 📄 Paper
 
-1.  **Monotonic Policy Sync (CRDT)**: Policies are stored as Conflict-free Replicated Data Types, ensuring every agent node eventually reaches the same state without a central bottleneck.
-2.  **Epoch Attestation Caching**: Uses hardware-rooted TEE (Trusted Execution Environment) handshakes, cached per epoch, to maintain security without the 200ms round-trip cost.
-3.  **Governance-Aware JIT**: Injects enforcement logic directly into the action pipeline via a high-performance JIT hook.
+"Governing the Physician Twin: Ethical Hyper-Velocity (EHV) 
+as a Provably Deterministic Governance Architecture for 
+Agentic Identity in Health Digital Twins"
+
+- arXiv: *[under review — link to be added May 18, 2026]*
+- Blog: [riddhimohan.com/blog/ethical-hyper-velocity-ehv-governance-framework](https://www.riddhimohan.com/blog/ethical-hyper-velocity-ehv-governance-framework)
+
+---
+
+## 🔑 Key Contributions
+
+- **SMFD** — Sub-millisecond Formal Determinism: GL → 0 
+  asymptotically, bounded by O(1) TEE attestation overhead
+- **Policy Enforcement Invariant** — G(a,C) ∈ {PERMIT, DENY, 
+  ESCALATE} via hardware-rooted cryptographic attestation
+- **CRDT Join-Semilattice** — Monotonic Byzantine Fault 
+  Tolerant policy sync via K-of-N threshold signatures
+- **Tiered FSDM** — Fail-Safe Degraded Mode across 3 
+  clinical severity tiers (NIST SP 800-53 SI-17 aligned)
+- **Velocity-Ethics Co-Production** — ∂V/∂I ≥ 0, a sign 
+  reversal from all existing framework assumptions
+
+---
+
+## 📐 TLA+ Formal Specification
+
+The core safety guarantees of the EHV architecture are formally specified in TLA+:
+- **Specification File**: [`EHV.tla`](EHV.tla) (and [`EHV.cfg`](EHV.cfg))
+- **Model Checking**: Evaluated using the TLC Model Checker to a depth of 8, exploring 1,738 states (324 distinct states found) with 0 safety or liveness violations.
+- **Safety Invariant**: Enforces that no unsafe agentic action can reach a `PERMIT` state under any asynchronous scheduler, network partition, or concurrent update interleaving.
+
+---
+
+## 🏗️ Repository Structure
+
+This repository provides the reference proof-of-concept Python runtime implementing the EHV JIT-PEP enforcement pipeline:
+
+- **[`ehv/`](ehv/)**: Reference implementation packages.
+  - **[`ehv/compiler/engine.py`](ehv/compiler/engine.py)**: The JIT Policy Enforcement Point (PEP) decorator enforcer.
+  - **[`ehv/sync/store.py`](ehv/sync/store.py)**: Conflict-free Replicated Data Type (CRDT) policy store using physical/logical timestamps.
+  - **[`ehv/enclave/enclave.py`](ehv/enclave/enclave.py)**: Simulated Trusted Execution Environment (TEE) for attestation caching.
+- **[`examples/`](examples/)**: Clinical dosage validation case studies and latency benchmarks.
+- **[`tests/`](tests/)**: Exhaustive pytest unit test suite confirming SMFD, epoch attestation, and fail-closed partition semantics.
+- **[`EHV.tla`](EHV.tla)**: TLA+ formal specification of the EHV state machine.
 
 ---
 
@@ -64,11 +93,46 @@ python examples/latency_bench.py
 
 ---
 
-## 📚 Research & Artifacts
+## 📚 Research & References
 
 - **arXiv Preprint**: *[Under Review — Submitted May 18, 2026]*
 - **[Verification Report](REPORT.md)**: View the latest empirical benchmarks.
 - **[TLA+ Specification](EHV.tla)**: Inspect the formal safety proofs.
+- **[Limitations & Scoping](LIMITATIONS.md)**: Detailed breakdown of PoC vs. full architecture.
+
+---
+
+## 📊 GL Reduction Model
+
+| Architecture | GL | Reduction |
+|---|---|---|
+| ISO 42001 PDCA | ~2×10⁹ ms | Baseline |
+| NIST AI RMF | ~3×10⁸ ms | ~85% |
+| EHV Transitional | <60,000 ms | ~99.997% |
+| EHV Full (TLA+) | O(1) bounded | ~100% |
+
+---
+
+## 📜 Citation
+
+```bibtex
+@misc{sharma2026ehv,
+  title={Governing the Physician Twin: Ethical Hyper-Velocity 
+         (EHV) as a Provably Deterministic Governance 
+         Architecture for Agentic Identity in Health Digital 
+         Twins},
+  author={Sharma, Riddhi Mohan},
+  year={2026},
+  note={arXiv preprint [link to be added]},
+  url={https://www.riddhimohan.com/blog/ethical-hyper-velocity-ehv-governance-framework}
+}
+```
+
+---
+
+## 🔖 License
+
+CC BY 4.0 — You may share and adapt with attribution.
 
 ---
 *Developed by Riddhi Mohan Sharma | [riddhimohan.com](https://riddhimohan.com)*

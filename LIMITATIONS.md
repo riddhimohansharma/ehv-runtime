@@ -36,6 +36,7 @@ Results vary by ±30% across runs due to OS scheduling jitter and thermal state.
 - [ ] Integration with a real LLM inference pipeline (e.g., vLLM, Ollama)
 - [ ] ASEL implementation for clinical language parsing
 - [ ] GBOM cryptographic receipt generation
+- [ ] Concurrent multi-agent modeling and conflict testing
 
 ---
 *This document ensures transparency for reviewers and users of the EHV-Runtime artifact.*

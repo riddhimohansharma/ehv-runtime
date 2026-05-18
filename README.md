@@ -1,7 +1,7 @@
 # Ethical Hyper-Velocity (EHV) Governance Framework
 
-> A provably deterministic governance architecture for
-> agentic identity in health digital twins.
+> A Provably Deterministic
+> Governance-Aware JIT Compiler Architecture for Agentic Systems
 
 **Author:** Riddhi Mohan Sharma
 **Affiliation:** Independent Researcher, AI Governance &
@@ -12,8 +12,7 @@ Healthcare Informatics | Columbia University EPM
 
 ## 📄 Paper
 
-"Ethical Hyper-Velocity (EHV): A Provably Deterministic
-Governance-Aware JIT Compiler Architecture for Agentic Systems"
+"Ethical Hyper-Velocity (EHV): A Provably Deterministic Governance-Aware JIT Compiler Architecture for Agentic Systems"
 
 - arXiv: *[under review — link to be added May 18, 2026]*
 - Blog: [riddhimohan.com/blog/ethical-hyper-velocity-ehv-governance-framework](https://www.riddhimohan.com/blog/ethical-hyper-velocity-ehv-governance-framework)

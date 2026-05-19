@@ -9,6 +9,10 @@ authors:
 version: "4.1"
 date-released: 2026-05-18
 url: "https://www.riddhimohan.com/blog/ethical-hyper-velocity-ehv-governance-framework"
+identifiers:
+  - type: doi
+    value: 10.48550/arXiv.2605.17909
+    description: "Official arXiv DOI for the EHV pre-print"
 license: CC-BY-4.0
 keywords:
   - AI governance

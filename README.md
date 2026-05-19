@@ -14,7 +14,7 @@ Healthcare Informatics | Columbia University EPM
 
 "Ethical Hyper-Velocity (EHV): A Provably Deterministic Governance-Aware JIT Compiler Architecture for Agentic Systems"
 
-- arXiv: *[under review — link to be added May 18, 2026]*
+- arXiv: [arXiv:2605.17909](https://arxiv.org/abs/2605.17909) (DOI: [10.48550/arXiv.2605.17909](https://doi.org/10.48550/arXiv.2605.17909))
 - Blog: [riddhimohan.com/blog/ethical-hyper-velocity-ehv-governance-framework](https://www.riddhimohan.com/blog/ethical-hyper-velocity-ehv-governance-framework)
 
 ---
@@ -92,7 +92,7 @@ python examples/latency_bench.py
 
 ## 📚 Research & References
 
-- **arXiv Preprint**: *[Under Review — Submitted May 18, 2026]*
+- arXiv Preprint: [arXiv:2605.17909](https://arxiv.org/abs/2605.17909)
 - **[Verification Report](REPORT.md)**: View the latest empirical benchmarks.
 - **[TLA+ Specification](EHV.tla)**: Inspect the formal safety proofs.
 - **[Limitations & Scoping](LIMITATIONS.md)**: Detailed breakdown of PoC vs. full architecture.
@@ -118,8 +118,11 @@ python examples/latency_bench.py
          Governance-Aware JIT Compiler Architecture for Agentic Systems},
   author={Sharma, Riddhi Mohan},
   year={2026},
-  note={arXiv preprint [link to be added]},
-  url={https://www.riddhimohan.com/blog/ethical-hyper-velocity-ehv-governance-framework}
+  eprint={2605.17909},
+  archivePrefix={arXiv},
+  primaryClass={cs.AI},
+  doi={10.48550/arXiv.2605.17909},
+  url={https://arxiv.org/abs/2605.17909}
 }
 ```
 

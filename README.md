@@ -1,5 +1,8 @@
 # Ethical Hyper-Velocity (EHV) Governance Framework
 
+[![arXiv](https://img.shields.io/badge/arXiv-under_review-B31B1B.svg)](https://arxiv.org/abs/2605.17909)
+[![Stability: Alpha](https://img.shields.io/badge/stability-alpha-orange.svg)](#)
+
 > A Provably Deterministic
 > Governance-Aware JIT Compiler Architecture for Agentic Systems
 
@@ -14,7 +17,8 @@ Healthcare Informatics | Columbia University EPM
 
 "Ethical Hyper-Velocity (EHV): A Provably Deterministic Governance-Aware JIT Compiler Architecture for Agentic Systems"
 
-- arXiv: [arXiv:2605.17909](https://arxiv.org/abs/2605.17909) (DOI: [10.48550/arXiv.2605.17909](https://doi.org/10.48550/arXiv.2605.17909))
+- arXiv: [arXiv:2605.17909 \[cs.AI\]](https://arxiv.org/abs/2605.17909) (or `arXiv:2605.17909v1 [cs.AI]` for this version)
+- DOI: [10.48550/arXiv.2605.17909](https://doi.org/10.48550/arXiv.2605.17909)
 - Blog: [riddhimohan.com/blog/ethical-hyper-velocity-ehv-governance-framework](https://www.riddhimohan.com/blog/ethical-hyper-velocity-ehv-governance-framework)
 
 ---

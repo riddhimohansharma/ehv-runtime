@@ -1,0 +1,6 @@
+scenario,throughput_tokens_per_s
+W1_safe_permit,1501.24
+W2_unsafe_deny,1434.43
+W3_ambiguous_escalate,1300.12
+W4_policy_update,1249.49
+W5_partition_fail_closed,1260.6

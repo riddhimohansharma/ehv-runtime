@@ -1,5 +1,5 @@
 cff-version: 1.2.0
-title: "Ethical Hyper-Velocity (EHV): A Provably Deterministic Governance-Aware JIT Compiler Architecture for Agentic Systems"
+title: "Ethical Hyper-Velocity (EHV): A Governance-Aware JIT Compiler Architecture for Agentic Systems"
 message: "If you use this work, please cite it as below."
 authors:
   - family-names: Sharma

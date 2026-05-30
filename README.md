@@ -3,8 +3,7 @@
 [![arXiv](https://img.shields.io/badge/arXiv-under_review-B31B1B.svg)](https://arxiv.org/abs/2605.17909)
 [![Stability: Alpha](https://img.shields.io/badge/stability-alpha-orange.svg)](#)
 
-> A Provably Deterministic
-> Governance-Aware JIT Compiler Architecture for Agentic Systems
+> A Governance-Aware JIT Enforcement Architecture for Agentic Systems
 
 **Author:** Riddhi Mohan Sharma
 **Affiliation:** Independent Researcher, AI Governance &
@@ -15,7 +14,7 @@ Healthcare Informatics | Columbia University EPM
 
 ## 📄 Paper
 
-"Ethical Hyper-Velocity (EHV): A Provably Deterministic Governance-Aware JIT Compiler Architecture for Agentic Systems"
+"Ethical Hyper-Velocity (EHV): A Governance-Aware JIT Enforcement Architecture for Agentic Systems"
 
 - arXiv: [arXiv:2605.17909 \[cs.AI\]](https://arxiv.org/abs/2605.17909) (or `arXiv:2605.17909v1 [cs.AI]` for this version)
 - DOI: [10.48550/arXiv.2605.17909](https://doi.org/10.48550/arXiv.2605.17909)
@@ -25,12 +24,14 @@ Healthcare Informatics | Columbia University EPM
 
 ## 🔑 Key Contributions
 
-- **SMFD** — Sub-millisecond Formal Determinism: GL → 0
+- **SMFD** — Sub-millisecond Formal Constraints: GL → 0
   asymptotically, bounded by O(1) TEE attestation overhead
 - **Policy Enforcement Invariant** — G(a,C) ∈ {PERMIT, DENY,
   ESCALATE} via hardware-rooted cryptographic attestation
-- **CRDT Join-Semilattice** — Monotonic Byzantine Fault
-  Tolerant policy sync via K-of-N threshold signatures
+- **CRDT Causal Sync** — Monotonic causal policy store via
+  vector clocks mitigating clock-skew attacks (T7)
+- **Grammar-Constrained Decoding (GCD)** — Pre-execution logit
+  masking to enforce syntactic compliance at the token level
 - **Tiered FSDM** — Fail-Safe Degraded Mode across 3
   clinical severity tiers (NIST SP 800-53 SI-17 aligned)
 - **Velocity-Ethics Co-Production** — ∂V/∂I ≥ 0, a sign
@@ -53,8 +54,12 @@ This repository provides the reference proof-of-concept Python runtime implement
 
 - **[`ehv/`](ehv/)**: Reference implementation packages.
   - **[`ehv/compiler/engine.py`](ehv/compiler/engine.py)**: The JIT Policy Enforcement Point (PEP) decorator enforcer.
-  - **[`ehv/sync/store.py`](ehv/sync/store.py)**: Conflict-free Replicated Data Type (CRDT) policy store using physical/logical timestamps.
+  - **[`ehv/gcd/`](ehv/gcd/)**: Grammar-Constrained Decoding (GCD) module (DFA + LogitsMasker).
+  - **[`ehv/sync/store.py`](ehv/sync/store.py)**: Conflict-free Replicated Data Type (CRDT) policy store (LWW + Causal).
+  - **[`ehv/sync/vclock.py`](ehv/sync/vclock.py)**: Vector clock for causal policy ordering.
+  - **[`ehv/identity/`](ehv/identity/)**: SPIFFE/SPIRE workload identity stub.
   - **[`ehv/enclave/enclave.py`](ehv/enclave/enclave.py)**: Simulated Trusted Execution Environment (TEE) for attestation caching.
+- **[`bench/`](bench/)**: Reproducible SEV-SNP benchmark suite and execution latency harness.
 - **[`examples/`](examples/)**: Clinical dosage validation case studies and latency benchmarks.
 - **[`tests/`](tests/)**: Exhaustive pytest unit test suite confirming SMFD, epoch attestation, and fail-closed partition semantics.
 - **[`EHV.tla`](EHV.tla)**: TLA+ formal specification of the EHV state machine.
@@ -69,28 +74,29 @@ git clone https://github.com/riddhimohansharma/ehv-runtime.git
 cd ehv-runtime
 ```
 
-### 2. Run the Clinical Dosage Case Study
-See how EHV rejects a toxic dosage recommendation in **< 10 microseconds** immediately following a policy update.
+### 2. Run the GCD Clinical Dosage Demo
 ```bash
-python examples/clinical_dosage.py
+python examples/gcd_dosage.py
 ```
 
-### 3. Verify Performance (SMFD)
-Run the 10,000 iteration benchmark to prove the sub-millisecond enforcement speed.
+### 3. Verify Performance (SMFD Benchmarks)
+Run the benchmark harness to generate latency and throughput projections.
 ```bash
-python examples/latency_bench.py
+pip install pandas matplotlib
+python bench/sev_snp_benchmark.py
+python bench/measure_enforcement.py
 ```
 
 ---
 
 ## 📂 Repository Roadmap
 
-- [x] **Enforcement Pattern**: Decorator-based PEP + LWW Policy Store.
-- [x] **Formal Verification**: TLA+ specification verified with TLC to depth 8 (0 violations, 324 distinct states) under a bounded configuration.
-- [ ] **Multi-Node CRDT**: Distributed policy sync with partition testing.
-- [ ] **Hardware Root**: Integration with Intel TDX / AMD SEV-SNP.
-- [ ] **ASEL**: Action Schema Extraction Layer for natural language parsing.
-- [ ] **LLM Integration**: PEP wrapping a real inference pipeline.
+- [x] **Enforcement Pattern**: Decorator-based PEP + Causal CRDT Policy Store.
+- [x] **Grammar-Constrained Decoding (GCD)**: Token-level logits masking DFA engine.
+- [x] **OSCAL GBOM Export**: NIST OSCAL v1.1.2 compliance-as-code schema.
+- [x] **Formal Verification**: TLA+ specification verified with TLC to depth 8.
+- [ ] **Hardware Root**: Integration with physical Intel TDX / AMD SEV-SNP.
+- [ ] **LLM Integration**: PEP wrapping a real Hugging Face / vLLM inference pipeline.
 
 ---
 
@@ -118,8 +124,8 @@ python examples/latency_bench.py
 
 ```bibtex
 @misc{sharma2026ehv,
-  title={Ethical Hyper-Velocity (EHV): A Provably Deterministic
-         Governance-Aware JIT Compiler Architecture for Agentic Systems},
+  title={Ethical Hyper-Velocity (EHV): A Governance-Aware
+         JIT Enforcement Architecture for Agentic Systems},
   author={Sharma, Riddhi Mohan},
   year={2026},
   eprint={2605.17909},

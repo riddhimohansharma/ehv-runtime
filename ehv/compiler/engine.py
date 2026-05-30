@@ -34,6 +34,7 @@ class EHVEngine:
         self._epoch_hash = None
         self._epoch_id = 0
         self._epoch_valid = False  # Start invalid; first action triggers attestation
+        self.tee_measurement = ""
 
         # Dependency injection (MAJOR-2 fix)
         self.policy_store = policy_store or global_policy_store
@@ -86,6 +87,7 @@ class EHVEngine:
             self._epoch_id = report["epoch_id"]
             self._last_attestation = now
             self._epoch_valid = report["attestation_status"] == "VALID"
+            self.tee_measurement = report.get("measurement", "")
             return True, self._epoch_valid
         except Exception:
             # Simulate failure to reach KBS (Key Broker Service)
@@ -129,7 +131,7 @@ class EHVEngine:
                 if not attestation_valid:
                     self.gbom_log.append(
                         action_name, action_args, policy_hash,
-                        self._epoch_id, "DENY", False)
+                        self._epoch_id, "DENY", False, self.tee_measurement)
                     # Task 1: Strict Fail-Closed Partition Semantics
                     raise GovernanceError(
                         "DENIED: Epoch attestation invalid (fail-closed partition)")
@@ -141,7 +143,7 @@ class EHVEngine:
                 except Exception as e:
                     self.gbom_log.append(
                         action_name, action_args, policy_hash,
-                        self._epoch_id, "ESCALATE", attestation_valid)
+                        self._epoch_id, "ESCALATE", attestation_valid, self.tee_measurement)
                     raise
 
                 if not result:
@@ -149,7 +151,7 @@ class EHVEngine:
                     gl = (end_time - start_time) * 1000
                     self.gbom_log.append(
                         action_name, action_args, policy_hash,
-                        self._epoch_id, "DENY", attestation_valid)
+                        self._epoch_id, "DENY", attestation_valid, self.tee_measurement)
                     raise GovernanceError(
                         f"DENIED by EHV Invariant (GL: {gl:.4f}ms)")
 
@@ -159,13 +161,17 @@ class EHVEngine:
                 gl = (end_time - start_time) * 1000
                 self.gbom_log.append(
                     action_name, action_args, policy_hash,
-                    self._epoch_id, "PERMIT", attestation_valid)
+                    self._epoch_id, "PERMIT", attestation_valid, self.tee_measurement)
                 return res
             return wrapper
         return decorator
 
     def get_gbom(self):
         return self.gbom_log.to_json()
+
+    def export_gbom_oscal(self, path: str):
+        """Convenience method to export the GBOM log in OSCAL format."""
+        self.gbom_log.export_oscal(path)
 
 
 # Shared engine instance

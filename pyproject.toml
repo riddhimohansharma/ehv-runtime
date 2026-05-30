@@ -4,11 +4,11 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "ehv-runtime"
-version = "0.2.0"
+version = "0.3.0"
 authors = [
   { name="Riddhi Mohan Sharma", email="riddhimohan@ieee.org" },
 ]
-description = "A provably deterministic governance-aware JIT compiler architecture for agentic systems."
+description = "A governance-aware JIT compiler architecture for agentic systems."
 readme = "README.md"
 requires-python = ">=3.10"
 classifiers = [
@@ -20,3 +20,6 @@ classifiers = [
 
 # No external dependencies - entirely Python standard library
 dependencies = []
+
+[project.optional-dependencies]
+bench = ["pandas", "matplotlib"]

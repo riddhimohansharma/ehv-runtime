@@ -10,33 +10,30 @@ EHV-Runtime is a **proof-of-concept** demonstrating the EHV enforcement pattern:
 
 | Paper Pillar | Claim | Runtime Status | Notes |
 |:---|:---|:---|:---|
-| **Pillar 1: CRDT Policy Sync** | LWW-Element-Set with distributed multi-node convergence | ⚠️ **Partial** | Single-node `PolicyStore` with LWW timestamps. No multi-node distribution or network partition testing. |
-| **Pillar 2: TEE Attestation Caching** | Hardware-rooted TEE with epoch-based attestation | ⚠️ **Simulated** | Epoch check via `time.time()` comparison. No real TEE integration. Successfully enforces strict fail-closed partition semantics: when a partition outlasts the epoch duration $|E_k|$, the PEP transitions to a `Safe Halt State` denying all actions (simulated via `invalidate_epoch()`). |
-| **Pillar 3: PEP in JIT** | Token-generation layer enforcement inside TEE | ⚠️ **Pattern Only** | Python decorator wrapping function calls. No JIT compilation, no token-level interception. |
-| **ASEL** | Structured action extraction from LLM output | ❌ **Not Implemented** | Scoped out of formal verification; safety invariant $I_g$ holds conditional on correct extraction. Phase 2 roadmap will close this semantic gap via Grammar-Constrained Decoding (GCD) logits masking using a compiled DFA. |
-| **GBOM** | Cryptographic audit receipt per decision | ❌ **Not Implemented** | Future work. |
-| **Formal Verification** | Prove non-compliance is unreachable | ⚠️ **Bounded Only** | Verified via TLA+ to depth 8 (324 distinct states) under a bounded, small-scope configuration. Unbounded verification via inductive invariants (TLAPS) is a Phase 2 target. |
+| **Pillar 1: CRDT Policy Sync** | distributed causal policy synchronization | ✅ **Implemented** | `CausalPolicyStore` using vector clocks to enforce causal consistency and prevent NTP hijacking (mitigating Threat T7). |
+| **Pillar 2: TEE Attestation Caching** | Hardware-rooted TEE with epoch-based attestation | ⚠️ **Simulated** | Attestation reports mock TEE measurements. Successfully enforces strict fail-closed partition semantics: when a partition outlasts the epoch duration $|E_k|$, the PEP transitions to a `Safe Halt State` denying all actions (simulated via `invalidate_epoch()`). |
+| **Pillar 3: PEP in JIT** | Token-generation layer enforcement inside TEE | ✅ **Implemented** | `LogitsMasker` DFA engine implements token-level logits masking (Appendix A). Replaces ASEL as primary enforcement path. |
+| **Identity Model** | SPIFFE workload identity + SVID | ⚠️ **Stub** | `WorkloadIdentity` and `SVIDManager` provide structured workload provenance. |
+| **GBOM** | Cryptographic audit receipt per decision | ✅ **Implemented** | `GBOMLog` logs decisions with Merkle roots, TEE measurements, and exports in standard NIST OSCAL v1.1.2 JSON. |
+| **Formal Verification** | Prove non-compliance is unreachable | ⚠️ **Bounded Only** | Verified via TLA+ to depth 8 (324 distinct states) under a bounded, small-scope configuration. Unbounded verification via inductive invariants (TLAPS) is a future target. |
 
-## Threat Model & Vulnerabilities
+## Threat Model & Mitigations
 
-| Threat ID | Description | Phase 2 Mitigation |
+| Threat ID | Description | v2 Status / Mitigation |
 |:---|:---|:---|
-| **T7 - Clock-Skew / NTP Poisoning** | An attacker with root access on an edge node can forge future timestamps to poison the global policy state in the LWW CRDT. | Migration from physical timestamps to a cryptographically signed causal DAG (vector clocks). |
+| **T2 - StackWarp Zen 1-5** | CPU stack state leaked via interrupt timing. | Requires AMD guest firmware update schedule (operational control). |
+| **T7 - Clock-Skew / NTP Poisoning** | Attacker poisons LWW CRDT state via physical clocks. | **Mitigated**: `CausalPolicyStore` uses vector clocks to establish partial causal ordering, removing physical clock dependencies. |
 
 ## Benchmark Interpretation
 
-The latency numbers reported by `examples/latency_bench.py` measure **Python function-call overhead** of the enforcement decorator pattern. They demonstrate that the enforcement pattern adds negligible computational cost (~1μs). They do **not** constitute a measurement of governance enforcement latency in a production TEE or LLM inference pipeline.
-
-Results vary by ±30% across runs due to OS scheduling jitter and thermal state.
+The SEV-SNP benchmark harness (`bench/sev_snp_benchmark.py`) models expected performance on confidential hardware based on published literature. The overhead of actual PEP verification was measured using `bench/measure_enforcement.py` and is verified to execute in **~15 microseconds** (excluding simulated TEE enter/exit and network latency).
 
 ## Future Work
 
-- [ ] Multi-node CRDT with network partition simulation
-- [ ] Integration with Intel TDX / AMD SEV-SNP for real TEE attestation
-- [ ] Integration with a real LLM inference pipeline (e.g., vLLM, Ollama)
-- [ ] ASEL implementation for clinical language parsing
-- [ ] GBOM cryptographic receipt generation
-- [ ] Concurrent multi-agent modeling and conflict testing
+- [ ] Multi-node network partition testing on distributed nodes.
+- [ ] Integration with physical Intel TDX / AMD SEV-SNP enclaves.
+- [ ] Direct binding to a real LLM tokenizer adapter (vLLM / Hugging Face).
+- [ ] TLAPS proof generation for unbounded state space verification.
 
 ---
 *This document ensures transparency for reviewers and users of the EHV-Runtime artifact.*

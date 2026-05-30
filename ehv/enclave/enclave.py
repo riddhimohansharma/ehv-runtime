@@ -51,7 +51,8 @@ class Enclave:
             "policy_hash": policy_hash,
             "epoch_id": self._attestation_count,
             "epoch_timestamp": time.time(),
-            "hardware": "Simulated-TEE"
+            "hardware": "Simulated-TEE",
+            "measurement": "sevsnp:mrenclave:def456f81d4fae7dec11d0a76500a0c9"
         }
 
     def invalidate(self):

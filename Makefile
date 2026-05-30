@@ -1,4 +1,4 @@
-.PHONY: unit_test demo test all clean
+.PHONY: unit_test demo gcd_demo test bench all clean
 
 unit_test:
 	PYTHONPATH=. pytest tests/
@@ -16,8 +16,8 @@ test:
 	python3 experiments/gbom_audit.py
 
 bench:
-	python3 bench/sev_snp_benchmark.py
-	python3 bench/measure_enforcement.py
+	PYTHONPATH=. python3 bench/sev_snp_benchmark.py
+	PYTHONPATH=. python3 bench/measure_enforcement.py
 
 all: unit_test demo gcd_demo test bench
 

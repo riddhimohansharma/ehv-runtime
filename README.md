@@ -1,6 +1,6 @@
 # Ethical Hyper-Velocity (EHV) Governance Framework
 
-[![arXiv](https://img.shields.io/badge/arXiv-under_review-B31B1B.svg)](https://arxiv.org/abs/2605.17909)
+[![preprint](https://img.shields.io/badge/preprint-arXiv:2605.17909v1_%5Bcs.AI%5D-B31B1B.svg)](https://arxiv.org/abs/2605.17909)
 [![Stability: Alpha](https://img.shields.io/badge/stability-alpha-orange.svg)](#)
 
 > A Governance-Aware JIT Enforcement Architecture for Agentic Systems

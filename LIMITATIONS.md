@@ -4,7 +4,7 @@
 
 ## What This Repository Is
 
-EHV-Runtime is a **proof-of-concept** demonstrating the EHV enforcement pattern: decorator-based policy enforcement with CRDT-inspired policy synchronization. It validates the **control flow** of the Governance-Aware JIT architecture.
+EHV-Runtime is a **proof-of-concept** demonstrating the EHV enforcement pattern: decorator-based policy enforcement with CRDT-inspired policy synchronization. It validates the **control flow** of the Hardware-Rooted Zero-Trust Runtime Enforcement architecture.
 
 ## Implementation Status
 

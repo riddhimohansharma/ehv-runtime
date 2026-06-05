@@ -15,7 +15,7 @@ def prescribe_medication(drug, amount):
 ## 2. Policy Synchronization (CRDT)
 We use a **CausalPolicyStore** backed by **Vector Clocks**. Every policy update carries a vector clock rather than a physical timestamp. This ensures that even in distributed environments with network partitions, all nodes eventually converge on the most recent policy version while preserving causal ordering (mitigating clock skew vulnerabilities).
 
-## 3. Sub-millisecond Formal Determinism (SMFD)
+## 3. Sub-millisecond Formal Constraints (SMFD)
 To avoid the overhead of a remote attestation check (which can exceed 200ms), EHV implements **Epoch-based Attestation Caching**.
 - **Epoch Verification**: Once per epoch (e.g., 60s), the system performs a full hardware attestation and computes a hash of the current policy state.
 - **Hot-Path Verification**: For every inference call within the epoch, the system performs a local O(1) hash comparison.

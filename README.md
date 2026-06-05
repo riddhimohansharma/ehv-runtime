@@ -1,9 +1,9 @@
-# Ethical Hyper-Velocity (EHV) Governance Framework
+# Ethical Hyper-Velocity (EHV) Runtime
 
-[![preprint](https://img.shields.io/badge/preprint-arXiv:2605.17909v1_%5Bcs.AI%5D-B31B1B.svg)](https://arxiv.org/abs/2605.17909)
+[![preprint](https://img.shields.io/badge/preprint-arXiv:2605.17909v2_%5Bcs.AI%5D-B31B1B.svg)](https://arxiv.org/abs/2605.17909)
 [![Stability: Alpha](https://img.shields.io/badge/stability-alpha-orange.svg)](#)
 
-> A Governance-Aware JIT Enforcement Architecture for Agentic Systems
+> A Hardware-Rooted Zero-Trust Runtime Enforcement Architecture for Agentic AI Systems
 
 **Author:** Riddhi Mohan Sharma
 **Affiliation:** Independent Researcher, AI Governance &
@@ -14,9 +14,9 @@ Healthcare Informatics | Columbia University EPM
 
 ## 📄 Paper
 
-"Ethical Hyper-Velocity (EHV): A Governance-Aware JIT Enforcement Architecture for Agentic Systems"
+"Ethical Hyper-Velocity (EHV): A Hardware-Rooted Zero-Trust Runtime Enforcement Architecture for Agentic AI Systems"
 
-- arXiv: [arXiv:2605.17909 \[cs.AI\]](https://arxiv.org/abs/2605.17909) (or `arXiv:2605.17909v1 [cs.AI]` for this version)
+- arXiv: [arXiv:2605.17909 \[cs.AI\]](https://arxiv.org/abs/2605.17909) (or `arXiv:2605.17909v2 [cs.AI]` for this version)
 - DOI: [10.48550/arXiv.2605.17909](https://doi.org/10.48550/arXiv.2605.17909)
 - Blog: [riddhimohan.com/blog/ethical-hyper-velocity-ehv-governance-framework](https://www.riddhimohan.com/blog/ethical-hyper-velocity-ehv-governance-framework)
 
@@ -124,8 +124,8 @@ python bench/measure_enforcement.py
 
 ```bibtex
 @misc{sharma2026ehv,
-  title={Ethical Hyper-Velocity (EHV): A Governance-Aware
-         JIT Enforcement Architecture for Agentic Systems},
+  title={Ethical Hyper-Velocity (EHV): A Hardware-Rooted
+         Zero-Trust Runtime Enforcement Architecture for Agentic AI Systems},
   author={Sharma, Riddhi Mohan},
   year={2026},
   eprint={2605.17909},

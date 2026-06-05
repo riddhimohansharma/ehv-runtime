@@ -3,10 +3,10 @@
   Ethical Hyper-Velocity (EHV) — TLA+ Formal Specification
   Author: Riddhi Mohan Sharma
   
-  This specification models the EHV Governance-Aware JIT Compiler.
+  This specification models the EHV Hardware-Rooted Zero-Trust Runtime Enforcement Architecture.
   It proves that under all interleavings of asynchronous policy updates,
   network partitions, and concurrent agent actions, non-compliant 
-  actions are computationally unreachable (Safety Invariant I_g).
+  actions are unreachable in the verified bounded operating state space (Safety Invariant I_g).
 *)
 
 EXTENDS Naturals, FiniteSets, Sequences

@@ -25,10 +25,10 @@ Measured execution overhead of the JIT PEP decorator using `bench/measure_enforc
 
 | Metric | PERMIT | DENY | ESCALATE |
 |:---|:---|:---|:---|
-| **Mean** | 0.0161 ms | 0.0157 ms | 0.0160 ms |
-| **Median** | 0.0150 ms | 0.0149 ms | 0.0150 ms |
-| **P95** | 0.0200 ms | 0.0189 ms | 0.0197 ms |
-| **P99** | 0.0296 ms | 0.0281 ms | 0.0342 ms |
+| **Mean** | 0.0153 ms | 0.0161 ms | 0.0173 ms |
+| **Median** | 0.0145 ms | 0.0153 ms | 0.0160 ms |
+| **P95** | 0.0181 ms | 0.0192 ms | 0.0218 ms |
+| **P99** | 0.0275 ms | 0.0271 ms | 0.0323 ms |
 
 **Threshold**: < 1.000 ms  
 **Status**: **PASSED** (Actual PEP overhead is < 0.035 ms in all percentiles).
@@ -47,6 +47,12 @@ Modeled end-to-end token generation performance under five workload scenarios (u
 - **Mean Total Latency**: 0.7452 ms
 - **P95 Total Latency**: 0.7989 ms
 - **Mean Throughput**: 1349.18 tokens/sec
+
+### Visual Performance Analysis
+Here are the simulated latency and throughput profiles across all five workload scenarios:
+
+![Latency Projections](bench/output/latency_plot.png)
+![Throughput Projections](bench/output/throughput_plot.png)
 
 ## 🧠 Formal Methods Alignment
 The execution path observed in these experiments aligns 100% with the **TLA+ model checking results** (1,738 states generated, 324 distinct states found, 0 violations at depth 8). The `EHV.tla` specification correctly predicted the "Deny-on-Update" behavior observed in the Clinical Safety experiment.

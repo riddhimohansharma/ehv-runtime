@@ -87,6 +87,12 @@ python bench/sev_snp_benchmark.py
 python bench/measure_enforcement.py
 ```
 
+### 4. Visual Performance Projections
+Simulated latency and throughput profiles on AMD SEV-SNP:
+
+![Latency Projections](bench/output/latency_plot.png)
+![Throughput Projections](bench/output/throughput_plot.png)
+
 ---
 
 ## 📂 Repository Roadmap

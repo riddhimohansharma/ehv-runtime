@@ -4,3 +4,4 @@ __pycache__/
 tla2tools.jar
 EHV.out
 EHV.trace
+.bin

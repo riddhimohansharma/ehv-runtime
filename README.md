@@ -60,7 +60,7 @@ This repository provides the reference proof-of-concept Python runtime implement
   - **[`ehv/identity/`](ehv/identity/)**: SPIFFE/SPIRE workload identity stub.
   - **[`ehv/enclave/enclave.py`](ehv/enclave/enclave.py)**: Simulated Trusted Execution Environment (TEE) for attestation caching.
 - **[`bench/`](bench/)**: Reproducible SEV-SNP benchmark suite and execution latency harness.
-- **[`examples/`](examples/)**: Clinical dosage validation case studies and latency benchmarks.
+- **[`examples/`](examples/)**: Clinical dosage validation case studies, latency benchmarks, and Anthropic API red-teaming/prompt-injection defense examples.
 - **[`tests/`](tests/)**: Exhaustive pytest unit test suite confirming SMFD, epoch attestation, and fail-closed partition semantics.
 - **[`EHV.tla`](EHV.tla)**: TLA+ formal specification of the EHV state machine.
 
@@ -74,9 +74,15 @@ git clone https://github.com/riddhimohansharma/ehv-runtime.git
 cd ehv-runtime
 ```
 
-### 2. Run the GCD Clinical Dosage Demo
+### 2. Run the Demos
+Run the GCD Clinical Dosage Demo:
 ```bash
 python examples/gcd_dosage.py
+```
+
+Run the Anthropic Claude Red-Teaming & Prompt Injection defense harness:
+```bash
+python examples/anthropic_redteam.py
 ```
 
 ### 3. Verify Performance (SMFD Benchmarks)
@@ -102,7 +108,7 @@ Simulated latency and throughput profiles on AMD SEV-SNP:
 - [x] **OSCAL GBOM Export**: NIST OSCAL v1.1.2 compliance-as-code schema.
 - [x] **Formal Verification**: TLA+ specification verified with TLC to depth 8.
 - [ ] **Hardware Root**: Integration with physical Intel TDX / AMD SEV-SNP.
-- [ ] **LLM Integration**: PEP wrapping a real Hugging Face / vLLM inference pipeline.
+- [x] **LLM/API Integration**: PEP wrapping Anthropic API calls with prompt injection/jailbreak defense.
 
 ---
 

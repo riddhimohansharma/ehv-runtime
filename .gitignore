@@ -6,3 +6,6 @@ EHV.out
 EHV.trace
 .bin
 data/
+
+# Ignore state store health bin
+data/state_store.db/mem*health.bin

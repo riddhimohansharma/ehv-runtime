@@ -1,0 +1,203 @@
+{
+  "ckb_version": "0.2",
+  "job": {
+    "id": "20b03708528ae492",
+    "mode": "local",
+    "started_at": "2026-10-12T19:01:14Z",
+    "finished_at": "2026-10-12T19:31:09Z",
+    "generator": {
+      "name": "codebase-kb-engine",
+      "version": "0.9.4"
+    }
+  },
+  "status": "complete",
+  "repo": {
+    "url": "https://github.com/riddhimohansharma/ehv-runtime",
+    "branch": "main",
+    "commit_sha": "26289dcca127c0dbe18e2cbba0fc4b205110441e",
+    "generated_at": "2026-10-12T19:31:09Z",
+    "dirty_worktree": true
+  },
+  "outputs": [
+    {
+      "file": "00-overview.md",
+      "sha256": "0cc4577a73d38439c605f8264eced3796db58efd9979105b28d75322bd5104ea",
+      "bytes": 2882,
+      "present": true
+    },
+    {
+      "file": "01-technical-architecture.md",
+      "sha256": "e5b4e1c0128ac318c960def9df383da2167af4019efe4641acc568982d5f6963",
+      "bytes": 5575,
+      "present": true
+    },
+    {
+      "file": "02-functional-workflows.md",
+      "sha256": "1dcfbf7df2bf53cabc09a9075b1db5939056ad0074a4fd818030fce5f98897ce",
+      "bytes": 7976,
+      "present": true
+    },
+    {
+      "file": "03-business-rules.md",
+      "sha256": "42b578a6d39060da608cd865b20cb8d067f2b0caad47c3fac8f9e75670337f5a",
+      "bytes": 11313,
+      "present": true
+    },
+    {
+      "file": "04-system-context-and-gaps.md",
+      "sha256": "840c05c8e461befccb0974c10e001c22af5119eadb481f5865592f27b0074f0e",
+      "bytes": 5202,
+      "present": true
+    },
+    {
+      "file": "05-operations.md",
+      "sha256": "e11d6a483edbda7bf44a667f65d7baeb6b11fc1855953d79696b9e5bf7e16ed2",
+      "bytes": 3232,
+      "present": true
+    },
+    {
+      "file": "06-security-and-data.md",
+      "sha256": "94553e9853e4a52f374ba71037ccd5b700ca78982c8560ac5d52ee588f3fc184",
+      "bytes": 3828,
+      "present": true
+    },
+    {
+      "file": "07-decisions.md",
+      "sha256": "fb77ad82e44755aa35856ea920ed438cb69fc7cedcd35672b738e123b0f854b5",
+      "bytes": 4503,
+      "present": true
+    },
+    {
+      "file": "09-reference.md",
+      "sha256": "1522d89c7560c5aaad770710a4957c41978ebf77c265cc08835ae5382261bc40",
+      "bytes": 7410,
+      "present": true
+    },
+    {
+      "file": "ckb.json",
+      "sha256": "ce5a8ef46810555b3d204edeb66ffa03b731d2bad703aef65806e63d4ee0e132",
+      "bytes": 36180,
+      "present": true
+    }
+  ],
+  "validation": {
+    "structural": "pass",
+    "semantic": "pass",
+    "messages": [],
+    "docs": {}
+  },
+  "coverage": {
+    "files_total": 53,
+    "sampled": false,
+    "buckets": {
+      "manifests": {
+        "found": 1,
+        "cited": 1,
+        "uncited": []
+      },
+      "lockfiles": {
+        "found": 0,
+        "cited": 0,
+        "uncited": []
+      },
+      "routes": {
+        "found": 0,
+        "cited": 0,
+        "uncited": []
+      },
+      "events": {
+        "found": 0,
+        "cited": 0,
+        "uncited": []
+      },
+      "datastores": {
+        "found": 0,
+        "cited": 0,
+        "uncited": []
+      },
+      "migrations": {
+        "found": 0,
+        "cited": 0,
+        "uncited": []
+      },
+      "iac": {
+        "found": 0,
+        "cited": 0,
+        "uncited": []
+      },
+      "ci": {
+        "found": 0,
+        "cited": 0,
+        "uncited": []
+      },
+      "config": {
+        "found": 2,
+        "cited": 1,
+        "uncited": [
+          "EHV.cfg"
+        ]
+      },
+      "api_specs": {
+        "found": 0,
+        "cited": 0,
+        "uncited": []
+      }
+    }
+  },
+  "confidence_summary": {
+    "confirmed": 61,
+    "inferred": 24,
+    "unknown": 0,
+    "overall": "inferred"
+  },
+  "entity_counts": {
+    "components": 12,
+    "interfaces": 6,
+    "dependencies": 2,
+    "datastores": 3,
+    "business_rules": 15,
+    "workflows": 8,
+    "artifacts": 1,
+    "config_keys": 2,
+    "external_services": 1,
+    "relations": 35
+  },
+  "warnings": [
+    "unrecognised components kind 'test-suite' coerced to default"
+  ],
+  "feedback": {
+    "next_run_focus": [
+      "EHV.cfg"
+    ],
+    "recurring": {
+      "unrecognised components kind": {
+        "count": 1,
+        "runs": 1
+      }
+    },
+    "improve_candidates": []
+  },
+  "perf": {
+    "phase_s": {
+      "merge": 0.096,
+      "normalize": 0.302,
+      "inventory": 0.019,
+      "coverage": 0.293,
+      "validate": 2.032,
+      "docmeta": 0.552,
+      "reference": 0.26,
+      "redact": 0.041,
+      "lint": 0.37
+    },
+    "finalize_s": 4.19,
+    "finalize_attempt": 1,
+    "inventory_source": "reused",
+    "fanout": {
+      "scouts": 8,
+      "writers": 2,
+      "retries": 0
+    }
+  },
+  "token_usage": null,
+  "token_usage_note": "Not observable from inside finalize. Filled in afterwards by scripts/usage.sh: exact for headless runs (`claude -p --output-format json`), and from the session transcript (main thread + sub-agents) for interactive runs; null when neither was available."
+}

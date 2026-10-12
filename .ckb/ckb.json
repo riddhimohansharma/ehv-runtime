@@ -1,0 +1,1359 @@
+{
+  "ckb_version": "0.2",
+  "repo": {
+    "url": "https://github.com/riddhimohansharma/ehv-runtime",
+    "branch": "main",
+    "commit_sha": "26289dcca127c0dbe18e2cbba0fc4b205110441e",
+    "generated_at": "2026-10-12T19:31:09Z"
+  },
+  "generator": {
+    "name": "codebase-kb-engine",
+    "version": "0.9.4"
+  },
+  "repo_profile": {
+    "languages": [
+      {
+        "name": "TLA+",
+        "files": 1
+      },
+      {
+        "name": "Python",
+        "files": 0
+      }
+    ],
+    "frameworks": [],
+    "build_tools": [
+      "make",
+      "setuptools"
+    ],
+    "owners": [
+      {
+        "name": "Riddhi Mohan Sharma",
+        "source": "other"
+      }
+    ],
+    "license": "MIT"
+  },
+  "confidence_summary": {
+    "confirmed": 61,
+    "inferred": 24,
+    "unknown": 0,
+    "overall": "inferred"
+  },
+  "entities": {
+    "components": [
+      {
+        "name": "ehv-runtime",
+        "confidence": "confirmed",
+        "provenance": [
+          {
+            "path": "pyproject.toml",
+            "line": 6
+          }
+        ],
+        "module_id": ".",
+        "kind": "library",
+        "language": "python",
+        "id": "component:."
+      },
+      {
+        "name": "bench",
+        "confidence": "confirmed",
+        "provenance": [
+          {
+            "path": "bench/measure_enforcement.py",
+            "line": 122
+          }
+        ],
+        "module_id": "bench",
+        "kind": "cli",
+        "language": "python",
+        "id": "component:bench"
+      },
+      {
+        "name": "ehv",
+        "confidence": "confirmed",
+        "provenance": [
+          {
+            "path": "ehv/__init__.py",
+            "line": 1
+          }
+        ],
+        "module_id": "ehv",
+        "kind": "library",
+        "language": "python",
+        "id": "component:ehv"
+      },
+      {
+        "name": "ehv.compiler (PEP engine + GBOM log)",
+        "confidence": "confirmed",
+        "provenance": [
+          {
+            "path": "ehv/compiler/engine.py",
+            "line": 15
+          }
+        ],
+        "module_id": "ehv/compiler",
+        "kind": "module",
+        "language": "python",
+        "id": "component:ehv/compiler"
+      },
+      {
+        "name": "ehv.enclave (simulated TEE)",
+        "confidence": "confirmed",
+        "provenance": [
+          {
+            "path": "ehv/enclave/enclave.py",
+            "line": 8
+          }
+        ],
+        "module_id": "ehv/enclave",
+        "kind": "module",
+        "language": "python",
+        "id": "component:ehv/enclave"
+      },
+      {
+        "name": "ehv.gcd (grammar-constrained decoding)",
+        "confidence": "confirmed",
+        "provenance": [
+          {
+            "path": "ehv/gcd/dfa.py",
+            "line": 24
+          }
+        ],
+        "module_id": "ehv/gcd",
+        "kind": "module",
+        "language": "python",
+        "id": "component:ehv/gcd"
+      },
+      {
+        "name": "ehv.identity (SPIFFE SVID stub)",
+        "confidence": "confirmed",
+        "provenance": [
+          {
+            "path": "ehv/identity/workload.py",
+            "line": 25
+          }
+        ],
+        "module_id": "ehv/identity",
+        "kind": "module",
+        "language": "python",
+        "id": "component:ehv/identity"
+      },
+      {
+        "name": "ehv.sync (CRDT policy store)",
+        "confidence": "confirmed",
+        "provenance": [
+          {
+            "path": "ehv/sync/store.py",
+            "line": 7
+          }
+        ],
+        "module_id": "ehv/sync",
+        "kind": "module",
+        "language": "python",
+        "id": "component:ehv/sync"
+      },
+      {
+        "name": "examples",
+        "confidence": "inferred",
+        "provenance": [
+          {
+            "path": "examples/anthropic_redteam.py",
+            "line": 290
+          }
+        ],
+        "module_id": "examples",
+        "kind": "cli",
+        "language": "python",
+        "id": "component:examples"
+      },
+      {
+        "name": "experiments",
+        "description": "Standalone Python demo scripts exercising ehv runtime (CRDT sync, epoch staleness, GBOM audit). No servers or routes.",
+        "confidence": "confirmed",
+        "provenance": [
+          {
+            "path": "experiments/crdt_convergence.py",
+            "line": 11
+          },
+          {
+            "path": "experiments/epoch_staleness.py",
+            "line": 15
+          },
+          {
+            "path": "experiments/gbom_audit.py",
+            "line": 20
+          }
+        ],
+        "module_id": "experiments",
+        "kind": "cli",
+        "language": "python",
+        "id": "component:experiments"
+      },
+      {
+        "name": "ehv-runtime",
+        "confidence": "confirmed",
+        "provenance": [
+          {
+            "path": "pyproject.toml",
+            "line": 6
+          }
+        ],
+        "module_id": "root",
+        "kind": "library",
+        "language": "python",
+        "id": "component:root"
+      },
+      {
+        "name": "ehv pytest suite",
+        "description": "pytest unit tests for ehv.compiler.engine, gbom, enclave, sync.store, gcd (dfa, grammar, masker); also identity, oscal, vclock",
+        "confidence": "confirmed",
+        "provenance": [
+          {
+            "path": "tests/test_engine.py",
+            "line": 1
+          }
+        ],
+        "module_id": "tests",
+        "kind": "other",
+        "id": "component:tests"
+      }
+    ],
+    "interfaces": [
+      {
+        "name": "measure_enforcement.py",
+        "confidence": "confirmed",
+        "provenance": [
+          {
+            "path": "bench/measure_enforcement.py",
+            "line": 122
+          }
+        ],
+        "kind": "cli",
+        "role": "provides",
+        "symbol": "{\"name\":\"run_actual_benchmarks\"}",
+        "id": "interface:cli:provides:{\"name\":\"run_actual_benchmarks\"}"
+      },
+      {
+        "name": "sev_snp_benchmark.py",
+        "confidence": "inferred",
+        "provenance": [
+          {
+            "path": "bench/sev_snp_benchmark.py",
+            "line": 1
+          }
+        ],
+        "kind": "cli",
+        "role": "provides",
+        "symbol": "{\"name\":\"sev_snp_benchmark\"}",
+        "id": "interface:cli:provides:{\"name\":\"sev_snp_benchmark\"}"
+      },
+      {
+        "name": "Anthropic Messages API (messages.create)",
+        "confidence": "inferred",
+        "provenance": [
+          {
+            "path": "examples/anthropic_redteam.py",
+            "line": 97
+          },
+          {
+            "path": "examples/anthropic_redteam.py",
+            "line": 157
+          }
+        ],
+        "kind": "http",
+        "role": "consumes",
+        "http": {
+          "method": "POST",
+          "normalized_path": "/v1/messages",
+          "host": "api.anthropic.com"
+        },
+        "id": "interface:http:consumes:api.anthropic.com:POST:/v1/messages"
+      },
+      {
+        "name": "EHVEngine.enforce decorator",
+        "confidence": "confirmed",
+        "provenance": [
+          {
+            "path": "ehv/compiler/engine.py",
+            "line": 113
+          }
+        ],
+        "kind": "library",
+        "role": "provides",
+        "symbol": "{\"name\":\"ehv.compiler.engine.EHVEngine.enforce\"}",
+        "id": "interface:library:provides:{\"name\":\"ehv.compiler.engine.EHVEngine.enforce\"}"
+      },
+      {
+        "name": "mask_logits",
+        "confidence": "confirmed",
+        "provenance": [
+          {
+            "path": "ehv/gcd/masker.py",
+            "line": 23
+          }
+        ],
+        "kind": "library",
+        "role": "provides",
+        "symbol": "{\"name\":\"ehv.gcd.masker.mask_logits\"}",
+        "id": "interface:library:provides:{\"name\":\"ehv.gcd.masker.mask_logits\"}"
+      },
+      {
+        "name": "SVIDManager",
+        "confidence": "confirmed",
+        "provenance": [
+          {
+            "path": "ehv/identity/workload.py",
+            "line": 25
+          }
+        ],
+        "kind": "library",
+        "role": "provides",
+        "symbol": "{\"name\":\"ehv.identity.workload.SVIDManager\"}",
+        "id": "interface:library:provides:{\"name\":\"ehv.identity.workload.SVIDManager\"}"
+      }
+    ],
+    "dependencies": [
+      {
+        "name": "matplotlib",
+        "confidence": "confirmed",
+        "provenance": [
+          {
+            "path": "pyproject.toml",
+            "line": 25
+          }
+        ],
+        "purl": "pkg:pypi/matplotlib",
+        "manifest_path": "pyproject.toml",
+        "scope": "optional",
+        "source": "registry",
+        "version_constraint": "*",
+        "id": "dependency:pkg:pypi/matplotlib@pyproject.toml"
+      },
+      {
+        "name": "pandas",
+        "confidence": "confirmed",
+        "provenance": [
+          {
+            "path": "pyproject.toml",
+            "line": 25
+          }
+        ],
+        "purl": "pkg:pypi/pandas",
+        "manifest_path": "pyproject.toml",
+        "scope": "optional",
+        "source": "registry",
+        "version_constraint": "*",
+        "id": "dependency:pkg:pypi/pandas@pyproject.toml"
+      }
+    ],
+    "datastores": [
+      {
+        "name": "bench/output",
+        "confidence": "confirmed",
+        "provenance": [
+          {
+            "path": "bench/measure_enforcement.py",
+            "line": 87
+          },
+          {
+            "path": "bench/sev_snp_benchmark.py",
+            "line": 13
+          }
+        ],
+        "engine": "filesystem",
+        "access": "write",
+        "id": "datastore:filesystem:_:bench-output"
+      },
+      {
+        "name": "ehv_enclave_mem",
+        "confidence": "confirmed",
+        "provenance": [
+          {
+            "path": "ehv/enclave/enclave.py",
+            "line": 20
+          }
+        ],
+        "engine": "filesystem",
+        "access": "readwrite",
+        "id": "datastore:filesystem:_:ehv-enclave-mem"
+      },
+      {
+        "name": "OSCAL GBOM export file",
+        "confidence": "confirmed",
+        "provenance": [
+          {
+            "path": "ehv/compiler/gbom.py",
+            "line": 125
+          }
+        ],
+        "engine": "filesystem",
+        "access": "write",
+        "id": "datastore:filesystem:_:oscal-gbom-export-file"
+      }
+    ],
+    "business_rules": [
+      {
+        "name": "Benchmark limit constraint",
+        "confidence": "inferred",
+        "provenance": [
+          {
+            "path": "bench/measure_enforcement.py",
+            "line": 16
+          },
+          {
+            "path": "bench/measure_enforcement.py",
+            "line": 19
+          }
+        ],
+        "statement": "Benchmark constraint permits an action only when val <= policies['limit'] (limit=10.0); violations raise GovernanceError (DENY); constraint exceptions are ESCALATE.",
+        "applies_to": [
+          "interface:cli:provides:{\"name\":\"run_actual_benchmarks\"}"
+        ],
+        "id": "business_rule:benchmark-limit-constraint"
+      },
+      {
+        "name": "Constraint must pass",
+        "confidence": "confirmed",
+        "provenance": [
+          {
+            "path": "ehv/compiler/engine.py",
+            "line": 141
+          }
+        ],
+        "statement": "Action runs only if constraint_func(policies,*args) is truthy; falsy raises GovernanceError (DENY); exception is logged ESCALATE and re-raised.",
+        "applies_to": [
+          "interface:library:provides:{\"name\":\"ehv.compiler.engine.EHVEngine.enforce\"}"
+        ],
+        "id": "business_rule:constraint-must-pass"
+      },
+      {
+        "name": "Dosage limit enforced via EHVEngine.enforce",
+        "description": "dose <= policy 'limit' (or limit_<drug>, default 10.0); violation raises GovernanceError.",
+        "confidence": "confirmed",
+        "provenance": [
+          {
+            "path": "experiments/epoch_staleness.py",
+            "line": 30
+          },
+          {
+            "path": "experiments/gbom_audit.py",
+            "line": 12
+          }
+        ],
+        "statement": "Dosage limit enforced via EHVEngine.enforce",
+        "id": "business_rule:dosage-limit-enforced-via-ehvengine-enforce"
+      },
+      {
+        "name": "Drug dosage limit",
+        "confidence": "confirmed",
+        "provenance": [
+          {
+            "path": "examples/anthropic_redteam.py",
+            "line": 130
+          },
+          {
+            "path": "examples/clinical_dosage.py",
+            "line": 11
+          }
+        ],
+        "statement": "Prescription amount must not exceed policy limit_<drug> (Vincristine 1.5 mg/m2, later 0.75); no limit means allowed. Enforced by @enforce decorator.",
+        "applies_to": [
+          "component:examples"
+        ],
+        "id": "business_rule:drug-dosage-limit"
+      },
+      {
+        "name": "Epoch re-attestation",
+        "confidence": "confirmed",
+        "provenance": [
+          {
+            "path": "ehv/compiler/engine.py",
+            "line": 58
+          }
+        ],
+        "statement": "Re-attest when epoch_duration (default 60s) elapsed, first run, or policy hash differs from enclave hash.",
+        "id": "business_rule:epoch-re-attestation"
+      },
+      {
+        "name": "Epoch Staleness Window bounded by min(epoch_duration, partition_duration); policy hash mismatch triggers re-attestation; emergency_epoch_reset forces immediate enforcement",
+        "description": "Asserted by experiment narrative.",
+        "confidence": "inferred",
+        "provenance": [
+          {
+            "path": "experiments/epoch_staleness.py",
+            "line": 123
+          },
+          {
+            "path": "experiments/epoch_staleness.py",
+            "line": 141
+          }
+        ],
+        "statement": "Epoch Staleness Window bounded by min(epoch_duration, partition_duration); policy hash mismatch triggers re-attestation; emergency_epoch_reset forces immediate enforcement",
+        "id": "business_rule:epoch-staleness-window-bounded-by-min-epoch-duration-partition-duration-policy-hash-mismatch-triggers-re-attestation-emergency-epoch-reset-forces-immediate-enforcement"
+      },
+      {
+        "name": "Fail-closed on invalid epoch",
+        "confidence": "confirmed",
+        "provenance": [
+          {
+            "path": "ehv/compiler/engine.py",
+            "line": 131
+          }
+        ],
+        "statement": "If epoch attestation is invalid or unreachable, all actions are DENIED and a GovernanceError is raised regardless of constraint result.",
+        "applies_to": [
+          "interface:library:provides:{\"name\":\"ehv.compiler.engine.EHVEngine.enforce\"}"
+        ],
+        "id": "business_rule:fail-closed-on-invalid-epoch"
+      },
+      {
+        "name": "Fail-closed on stale attestation",
+        "confidence": "inferred",
+        "provenance": [
+          {
+            "path": "examples/anthropic_redteam.py",
+            "line": 234
+          }
+        ],
+        "statement": "If attestation epoch (60s) is expired and enclave is partitioned, execution is rejected.",
+        "id": "business_rule:fail-closed-on-stale-attestation"
+      },
+      {
+        "name": "GBOM log is a tamper-evident hash chain, verified by verify_chain",
+        "description": "Both permitted and denied actions are logged.",
+        "confidence": "inferred",
+        "provenance": [
+          {
+            "path": "experiments/gbom_audit.py",
+            "line": 38
+          }
+        ],
+        "statement": "GBOM log is a tamper-evident hash chain, verified by verify_chain",
+        "id": "business_rule:gbom-log-is-a-tamper-evident-hash-chain-verified-by-verify-chain"
+      },
+      {
+        "name": "Invalid epoch denies by default",
+        "confidence": "confirmed",
+        "provenance": [
+          {
+            "path": "EHV.tla",
+            "line": 77
+          }
+        ],
+        "statement": "If the policy epoch is not valid, enforcement is DENY (fail-safe); with valid epoch safe->PERMIT, unsafe->DENY, others->ESCALATE.",
+        "applies_to": [
+          "component:."
+        ],
+        "id": "business_rule:invalid-epoch-denies-by-default"
+      },
+      {
+        "name": "LWW policy update",
+        "confidence": "confirmed",
+        "provenance": [
+          {
+            "path": "ehv/sync/store.py",
+            "line": 28
+          }
+        ],
+        "statement": "PolicyStore rejects updates with timestamp <= existing; merge ties broken by lexicographic value; CausalPolicyStore uses vector clocks.",
+        "id": "business_rule:lww-policy-update"
+      },
+      {
+        "name": "Policy store converges by last-writer-wins timestamp",
+        "description": "After partition recovery nodes must hold identical LWW state.",
+        "confidence": "inferred",
+        "provenance": [
+          {
+            "path": "experiments/crdt_convergence.py",
+            "line": 53
+          }
+        ],
+        "statement": "Policy store converges by last-writer-wins timestamp",
+        "id": "business_rule:policy-store-converges-by-last-writer-wins-timestamp"
+      },
+      {
+        "name": "SVID validity",
+        "confidence": "confirmed",
+        "provenance": [
+          {
+            "path": "ehv/identity/workload.py",
+            "line": 43
+          }
+        ],
+        "statement": "SVID valid only if not revoked and within TTL (default 3600s).",
+        "id": "business_rule:svid-validity"
+      },
+      {
+        "name": "Unsafe action never permitted",
+        "confidence": "confirmed",
+        "provenance": [
+          {
+            "path": "EHV.tla",
+            "line": 46
+          }
+        ],
+        "statement": "No unsafe action may reach PERMIT enforcement status (TLA+ SafetyInvariant).",
+        "applies_to": [
+          "component:."
+        ],
+        "id": "business_rule:unsafe-action-never-permitted"
+      },
+      {
+        "name": "Vincristine dose cap",
+        "confidence": "confirmed",
+        "provenance": [
+          {
+            "path": "ehv/gcd/grammar.py",
+            "line": 21
+          }
+        ],
+        "statement": "Grammar permits only 'administer <dose> Vincristine IV' with dose <= max_dose (default 1.5); other tokens masked to -inf.",
+        "applies_to": [
+          "interface:library:provides:{\"name\":\"ehv.gcd.masker.mask_logits\"}"
+        ],
+        "id": "business_rule:vincristine-dose-cap"
+      }
+    ],
+    "workflows": [
+      {
+        "name": "Action enforcement (formal model)",
+        "confidence": "inferred",
+        "provenance": [
+          {
+            "path": "EHV.tla",
+            "line": 70
+          }
+        ],
+        "trigger": "agent submits action",
+        "steps": [
+          {
+            "description": "SubmitAction",
+            "order": 1
+          },
+          {
+            "description": "Enforce: PERMIT/DENY/ESCALATE based on epoch and action class",
+            "entity_id": "business_rule:invalid-epoch-denies-by-default",
+            "order": 2
+          },
+          {
+            "description": "CompleteAction resets state",
+            "order": 3
+          }
+        ],
+        "id": "workflow:action-enforcement-formal-model"
+      },
+      {
+        "name": "CRDT partition/recovery convergence",
+        "confidence": "confirmed",
+        "provenance": [
+          {
+            "path": "experiments/crdt_convergence.py",
+            "line": 15
+          }
+        ],
+        "steps": [
+          {
+            "order": 1,
+            "description": "unspecified"
+          }
+        ],
+        "id": "workflow:crdt-partition-recovery-convergence"
+      },
+      {
+        "name": "Epoch staleness scenarios",
+        "confidence": "confirmed",
+        "provenance": [
+          {
+            "path": "experiments/epoch_staleness.py",
+            "line": 19
+          }
+        ],
+        "steps": [
+          {
+            "order": 1,
+            "description": "unspecified"
+          }
+        ],
+        "id": "workflow:epoch-staleness-scenarios"
+      },
+      {
+        "name": "GBOM audit trail",
+        "confidence": "confirmed",
+        "provenance": [
+          {
+            "path": "experiments/gbom_audit.py",
+            "line": 23
+          }
+        ],
+        "steps": [
+          {
+            "order": 1,
+            "description": "unspecified"
+          }
+        ],
+        "id": "workflow:gbom-audit-trail"
+      },
+      {
+        "name": "Governed action enforcement",
+        "confidence": "confirmed",
+        "provenance": [
+          {
+            "path": "ehv/compiler/engine.py",
+            "line": 113
+          }
+        ],
+        "trigger": "decorated function call",
+        "steps": [
+          {
+            "description": "Verify epoch / attest via enclave",
+            "entity_id": "component:ehv/enclave",
+            "order": 1
+          },
+          {
+            "description": "Read policies from store",
+            "entity_id": "component:ehv/sync",
+            "order": 2
+          },
+          {
+            "description": "Evaluate constraint; DENY/ESCALATE/PERMIT",
+            "entity_id": "interface:library:provides:{\"name\":\"ehv.compiler.engine.EHVEngine.enforce\"}",
+            "order": 3
+          },
+          {
+            "description": "Append hash-chained GBOM entry",
+            "entity_id": "component:ehv/compiler",
+            "order": 4
+          }
+        ],
+        "id": "workflow:governed-action-enforcement"
+      },
+      {
+        "name": "Measure PEP enforcement latency",
+        "confidence": "confirmed",
+        "provenance": [
+          {
+            "path": "bench/measure_enforcement.py",
+            "line": 9
+          }
+        ],
+        "trigger": "python bench/measure_enforcement.py",
+        "steps": [
+          {
+            "description": "Build PolicyStore, Enclave, GBOMLog, EHVEngine",
+            "entity_id": "interface:cli:provides:{\"name\":\"run_actual_benchmarks\"}",
+            "order": 1
+          },
+          {
+            "description": "Run 10000 PERMIT, DENY, ESCALATE calls each and time them",
+            "order": 2
+          },
+          {
+            "description": "Write actual_enforcement_latency.csv",
+            "entity_id": "datastore:filesystem:_:bench-output",
+            "order": 3
+          }
+        ],
+        "id": "workflow:measure-pep-enforcement-latency"
+      },
+      {
+        "name": "Red-team agent tool call enforcement",
+        "confidence": "inferred",
+        "provenance": [
+          {
+            "path": "examples/anthropic_redteam.py",
+            "line": 144
+          }
+        ],
+        "trigger": "python examples/anthropic_redteam.py",
+        "steps": [
+          {
+            "description": "LLM returns tool_use for prescribe_medication",
+            "entity_id": "interface:http:consumes:api.anthropic.com:POST:/v1/messages",
+            "order": 1
+          },
+          {
+            "description": "PEP decorator checks dosage policy",
+            "entity_id": "business_rule:drug-dosage-limit",
+            "order": 2
+          },
+          {
+            "description": "Attestation fail-closed check",
+            "entity_id": "business_rule:fail-closed-on-stale-attestation",
+            "order": 3
+          }
+        ],
+        "id": "workflow:red-team-agent-tool-call-enforcement"
+      },
+      {
+        "name": "Synthetic SEV-SNP latency projection",
+        "confidence": "confirmed",
+        "provenance": [
+          {
+            "path": "bench/sev_snp_benchmark.py",
+            "line": 25
+          }
+        ],
+        "trigger": "python bench/sev_snp_benchmark.py",
+        "steps": [
+          {
+            "description": "Generate seeded Gaussian latency per scenario",
+            "order": 1
+          },
+          {
+            "description": "Write CSVs, plots, summary json/md",
+            "entity_id": "datastore:filesystem:_:bench-output",
+            "order": 2
+          }
+        ],
+        "id": "workflow:synthetic-sev-snp-latency-projection"
+      }
+    ],
+    "artifacts": [
+      {
+        "name": "ehv-runtime",
+        "confidence": "confirmed",
+        "provenance": [
+          {
+            "path": "pyproject.toml",
+            "line": 6
+          },
+          {
+            "path": "pyproject.toml",
+            "line": 7
+          }
+        ],
+        "kind": "package",
+        "purl": "pkg:pypi/ehv-runtime",
+        "manifest_path": "pyproject.toml",
+        "version": "0.3.0",
+        "id": "artifact:pkg:pypi/ehv-runtime"
+      }
+    ],
+    "config_keys": [
+      {
+        "name": "ANTHROPIC_API_KEY",
+        "confidence": "confirmed",
+        "provenance": [
+          {
+            "path": "examples/anthropic_redteam.py",
+            "line": 94
+          }
+        ],
+        "source": "env",
+        "is_secret": true,
+        "id": "config:env:ANTHROPIC_API_KEY"
+      },
+      {
+        "name": "Enclavesecret_key(hardcodedsimulatedrootkeyatenclave.py:24)",
+        "confidence": "confirmed",
+        "provenance": [
+          {
+            "path": "ehv/enclave/enclave.py",
+            "line": 24
+          }
+        ],
+        "source": "other",
+        "is_secret": true,
+        "id": "config:other:Enclavesecret_key(hardcodedsimulatedrootkeyatenclave.py:24)"
+      }
+    ],
+    "external_services": [
+      {
+        "name": "Anthropic API",
+        "confidence": "inferred",
+        "provenance": [
+          {
+            "path": "examples/anthropic_redteam.py",
+            "line": 97
+          }
+        ],
+        "domain": "api.anthropic.com",
+        "category": "llm",
+        "vendor": "Anthropic",
+        "id": "external:api.anthropic.com"
+      }
+    ]
+  },
+  "relations": [
+    {
+      "from": "component:.",
+      "to": "artifact:pkg:pypi/ehv-runtime",
+      "kind": "builds",
+      "confidence": "confirmed",
+      "provenance": [
+        {
+          "path": "pyproject.toml",
+          "line": 6
+        }
+      ]
+    },
+    {
+      "from": "component:.",
+      "to": "business_rule:invalid-epoch-denies-by-default",
+      "kind": "enforces",
+      "confidence": "inferred",
+      "provenance": [
+        {
+          "path": "EHV.tla",
+          "line": 77
+        }
+      ]
+    },
+    {
+      "from": "component:.",
+      "to": "business_rule:unsafe-action-never-permitted",
+      "kind": "enforces",
+      "confidence": "inferred",
+      "provenance": [
+        {
+          "path": "EHV.tla",
+          "line": 46
+        }
+      ]
+    },
+    {
+      "from": "component:bench",
+      "to": "business_rule:benchmark-limit-constraint",
+      "kind": "enforces",
+      "confidence": "inferred",
+      "provenance": [
+        {
+          "path": "bench/measure_enforcement.py",
+          "line": 22
+        }
+      ]
+    },
+    {
+      "from": "component:bench",
+      "to": "interface:cli:provides:{\"name\":\"run_actual_benchmarks\"}",
+      "kind": "provides",
+      "confidence": "confirmed",
+      "provenance": [
+        {
+          "path": "bench/measure_enforcement.py",
+          "line": 122
+        }
+      ]
+    },
+    {
+      "from": "component:bench",
+      "to": "interface:cli:provides:{\"name\":\"sev_snp_benchmark\"}",
+      "kind": "provides",
+      "confidence": "inferred",
+      "provenance": [
+        {
+          "path": "bench/sev_snp_benchmark.py",
+          "line": 1
+        }
+      ]
+    },
+    {
+      "from": "component:bench",
+      "to": "datastore:filesystem:_:bench-output",
+      "kind": "writes",
+      "confidence": "confirmed",
+      "provenance": [
+        {
+          "path": "bench/measure_enforcement.py",
+          "line": 117
+        }
+      ]
+    },
+    {
+      "from": "component:ehv",
+      "to": "component:ehv/compiler",
+      "kind": "contains",
+      "confidence": "inferred",
+      "provenance": [
+        {
+          "path": "ehv/compiler/engine.py",
+          "line": 1
+        }
+      ]
+    },
+    {
+      "from": "component:ehv",
+      "to": "component:ehv/enclave",
+      "kind": "contains",
+      "confidence": "inferred",
+      "provenance": [
+        {
+          "path": "ehv/enclave/enclave.py",
+          "line": 1
+        }
+      ]
+    },
+    {
+      "from": "component:ehv",
+      "to": "component:ehv/gcd",
+      "kind": "contains",
+      "confidence": "inferred",
+      "provenance": [
+        {
+          "path": "ehv/gcd/dfa.py",
+          "line": 1
+        }
+      ]
+    },
+    {
+      "from": "component:ehv",
+      "to": "component:ehv/identity",
+      "kind": "contains",
+      "confidence": "inferred",
+      "provenance": [
+        {
+          "path": "ehv/identity/workload.py",
+          "line": 1
+        }
+      ]
+    },
+    {
+      "from": "component:ehv",
+      "to": "component:ehv/sync",
+      "kind": "contains",
+      "confidence": "inferred",
+      "provenance": [
+        {
+          "path": "ehv/sync/store.py",
+          "line": 1
+        }
+      ]
+    },
+    {
+      "from": "component:ehv/compiler",
+      "to": "business_rule:constraint-must-pass",
+      "kind": "enforces",
+      "confidence": "confirmed",
+      "provenance": [
+        {
+          "path": "ehv/compiler/engine.py",
+          "line": 149
+        }
+      ]
+    },
+    {
+      "from": "component:ehv/compiler",
+      "to": "business_rule:epoch-re-attestation",
+      "kind": "enforces",
+      "confidence": "confirmed",
+      "provenance": [
+        {
+          "path": "ehv/compiler/engine.py",
+          "line": 58
+        }
+      ]
+    },
+    {
+      "from": "component:ehv/compiler",
+      "to": "business_rule:fail-closed-on-invalid-epoch",
+      "kind": "enforces",
+      "confidence": "confirmed",
+      "provenance": [
+        {
+          "path": "ehv/compiler/engine.py",
+          "line": 131
+        }
+      ]
+    },
+    {
+      "from": "component:ehv/compiler",
+      "to": "component:ehv/enclave",
+      "kind": "imports",
+      "confidence": "confirmed",
+      "provenance": [
+        {
+          "path": "ehv/compiler/engine.py",
+          "line": 6
+        }
+      ]
+    },
+    {
+      "from": "component:ehv/compiler",
+      "to": "component:ehv/sync",
+      "kind": "imports",
+      "confidence": "confirmed",
+      "provenance": [
+        {
+          "path": "ehv/compiler/engine.py",
+          "line": 5
+        }
+      ]
+    },
+    {
+      "from": "component:ehv/compiler",
+      "to": "interface:library:provides:{\"name\":\"ehv.compiler.engine.EHVEngine.enforce\"}",
+      "kind": "provides",
+      "confidence": "confirmed",
+      "provenance": [
+        {
+          "path": "ehv/compiler/engine.py",
+          "line": 113
+        }
+      ]
+    },
+    {
+      "from": "component:ehv/compiler",
+      "to": "datastore:filesystem:_:oscal-gbom-export-file",
+      "kind": "writes",
+      "confidence": "confirmed",
+      "provenance": [
+        {
+          "path": "ehv/compiler/gbom.py",
+          "line": 127
+        }
+      ]
+    },
+    {
+      "from": "component:ehv/enclave",
+      "to": "config:other:Enclavesecret_key(hardcodedsimulatedrootkeyatenclave.py:24)",
+      "kind": "configured_by",
+      "confidence": "confirmed",
+      "provenance": [
+        {
+          "path": "ehv/enclave/enclave.py",
+          "line": 24
+        }
+      ]
+    },
+    {
+      "from": "component:ehv/enclave",
+      "to": "datastore:filesystem:_:ehv-enclave-mem",
+      "kind": "reads",
+      "confidence": "confirmed",
+      "provenance": [
+        {
+          "path": "ehv/enclave/enclave.py",
+          "line": 70
+        }
+      ]
+    },
+    {
+      "from": "component:ehv/enclave",
+      "to": "datastore:filesystem:_:ehv-enclave-mem",
+      "kind": "writes",
+      "confidence": "confirmed",
+      "provenance": [
+        {
+          "path": "ehv/enclave/enclave.py",
+          "line": 47
+        }
+      ]
+    },
+    {
+      "from": "component:ehv/gcd",
+      "to": "business_rule:vincristine-dose-cap",
+      "kind": "enforces",
+      "confidence": "confirmed",
+      "provenance": [
+        {
+          "path": "ehv/gcd/grammar.py",
+          "line": 21
+        }
+      ]
+    },
+    {
+      "from": "component:ehv/gcd",
+      "to": "interface:library:provides:{\"name\":\"ehv.gcd.masker.mask_logits\"}",
+      "kind": "provides",
+      "confidence": "confirmed",
+      "provenance": [
+        {
+          "path": "ehv/gcd/masker.py",
+          "line": 23
+        }
+      ]
+    },
+    {
+      "from": "component:ehv/identity",
+      "to": "business_rule:svid-validity",
+      "kind": "enforces",
+      "confidence": "confirmed",
+      "provenance": [
+        {
+          "path": "ehv/identity/workload.py",
+          "line": 45
+        }
+      ]
+    },
+    {
+      "from": "component:ehv/identity",
+      "to": "interface:library:provides:{\"name\":\"ehv.identity.workload.SVIDManager\"}",
+      "kind": "provides",
+      "confidence": "confirmed",
+      "provenance": [
+        {
+          "path": "ehv/identity/workload.py",
+          "line": 25
+        }
+      ]
+    },
+    {
+      "from": "component:ehv/sync",
+      "to": "business_rule:lww-policy-update",
+      "kind": "enforces",
+      "confidence": "confirmed",
+      "provenance": [
+        {
+          "path": "ehv/sync/store.py",
+          "line": 28
+        }
+      ]
+    },
+    {
+      "from": "component:examples",
+      "to": "config:env:ANTHROPIC_API_KEY",
+      "kind": "configured_by",
+      "confidence": "confirmed",
+      "provenance": [
+        {
+          "path": "examples/anthropic_redteam.py",
+          "line": 94
+        }
+      ]
+    },
+    {
+      "from": "component:examples",
+      "to": "interface:http:consumes:api.anthropic.com:POST:/v1/messages",
+      "kind": "consumes",
+      "confidence": "inferred",
+      "provenance": [
+        {
+          "path": "examples/anthropic_redteam.py",
+          "line": 157
+        }
+      ]
+    },
+    {
+      "from": "component:examples",
+      "to": "business_rule:drug-dosage-limit",
+      "kind": "enforces",
+      "confidence": "confirmed",
+      "provenance": [
+        {
+          "path": "examples/clinical_dosage.py",
+          "line": 21
+        }
+      ]
+    },
+    {
+      "from": "component:examples",
+      "to": "business_rule:fail-closed-on-stale-attestation",
+      "kind": "enforces",
+      "confidence": "inferred",
+      "provenance": [
+        {
+          "path": "examples/anthropic_redteam.py",
+          "line": 242
+        }
+      ]
+    },
+    {
+      "from": "component:examples",
+      "to": "external:api.anthropic.com",
+      "kind": "uses_external",
+      "confidence": "inferred",
+      "provenance": [
+        {
+          "path": "examples/anthropic_redteam.py",
+          "line": 97
+        }
+      ]
+    },
+    {
+      "from": "component:root",
+      "to": "artifact:pkg:pypi/ehv-runtime",
+      "kind": "builds",
+      "confidence": "inferred",
+      "provenance": [
+        {
+          "path": "pyproject.toml",
+          "line": 5
+        }
+      ]
+    },
+    {
+      "from": "component:root",
+      "to": "dependency:pkg:pypi/matplotlib@pyproject.toml",
+      "kind": "depends_on",
+      "confidence": "confirmed",
+      "provenance": [
+        {
+          "path": "pyproject.toml",
+          "line": 25
+        }
+      ]
+    },
+    {
+      "from": "component:root",
+      "to": "dependency:pkg:pypi/pandas@pyproject.toml",
+      "kind": "depends_on",
+      "confidence": "confirmed",
+      "provenance": [
+        {
+          "path": "pyproject.toml",
+          "line": 25
+        }
+      ]
+    }
+  ],
+  "coverage": {
+    "files_total": 53,
+    "sampled": false,
+    "buckets": {
+      "manifests": {
+        "found": 1,
+        "cited": 1,
+        "uncited": []
+      },
+      "lockfiles": {
+        "found": 0,
+        "cited": 0,
+        "uncited": []
+      },
+      "routes": {
+        "found": 0,
+        "cited": 0,
+        "uncited": []
+      },
+      "events": {
+        "found": 0,
+        "cited": 0,
+        "uncited": []
+      },
+      "datastores": {
+        "found": 0,
+        "cited": 0,
+        "uncited": []
+      },
+      "migrations": {
+        "found": 0,
+        "cited": 0,
+        "uncited": []
+      },
+      "iac": {
+        "found": 0,
+        "cited": 0,
+        "uncited": []
+      },
+      "ci": {
+        "found": 0,
+        "cited": 0,
+        "uncited": []
+      },
+      "config": {
+        "found": 2,
+        "cited": 1,
+        "uncited": [
+          "EHV.cfg"
+        ]
+      },
+      "api_specs": {
+        "found": 0,
+        "cited": 0,
+        "uncited": []
+      }
+    }
+  }
+}

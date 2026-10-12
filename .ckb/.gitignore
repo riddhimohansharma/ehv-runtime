@@ -1,0 +1,10 @@
+# transient producer files and OS junk; never commit
+ckb.draft.json
+ckb.draft.d/
+ckb.json.candidate
+ckb.json.rejected
+manifest.json.tmp
+09-reference.md.tmp
+.DS_Store
+Thumbs.db
+desktop.ini

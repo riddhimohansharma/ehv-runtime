@@ -198,6 +198,23 @@
       "retries": 0
     }
   },
-  "token_usage": null,
-  "token_usage_note": "Not observable from inside finalize. Filled in afterwards by scripts/usage.sh: exact for headless runs (`claude -p --output-format json`), and from the session transcript (main thread + sub-agents) for interactive runs; null when neither was available."
+  "token_usage": {
+    "source": "transcript",
+    "messages": 209,
+    "input_tokens": 524,
+    "output_tokens": 29150,
+    "cache_read_input_tokens": 9710347,
+    "cache_creation_input_tokens": 732353,
+    "cache_hit_pct": 93,
+    "models": [
+      "claude-haiku-5-5",
+      "claude-opus-5-5",
+      "claude-sonnet-5-5"
+    ],
+    "subagent_files": 12,
+    "subagents_started": 12,
+    "scope": "session",
+    "cost_usd": null
+  },
+  "token_usage_note": "Recorded locally by scripts/usage.sh (transcript, scope session). Cost is only known for headless runs."
 }
